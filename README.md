@@ -33,30 +33,30 @@ _PHP: The Right Way_ 는 당신의 웹사이트에 사용할 수 있는 웹 배�
 
 ## Where
 
-<http://www.phptherightway.com>
+<https://www.phptherightway.com>
 
-* [English](http://www.phptherightway.com)
-* [Deutsch](http://rwetzlmayr.github.io/php-the-right-way)
-* [Español](http://phpdevenezuela.github.io/php-the-right-way)
-* [Français](http://eilgin.github.io/php-the-right-way/)
-* [Indonesia](http://id.phptherightway.com)
-* [Italiano](http://it.phptherightway.com)
-* [Polski](http://pl.phptherightway.com)
-* [Português do Brasil](http://br.phptherightway.com)
+* [English](https://www.phptherightway.com)
+* [Deutsch](https://rwetzlmayr.github.io/php-the-right-way)
+* [Español](https://phpdevenezuela.github.io/php-the-right-way)
+* [Français](https://eilgin.github.io/php-the-right-way/)
+* [Indonesia](https://id.phptherightway.com)
+* [Italiano](https://it.phptherightway.com)
+* [Polski](https://pl.phptherightway.com)
+* [Português do Brasil](https://br.phptherightway.com)
 * [Română](https://bgui.github.io/php-the-right-way/)
-* [Slovenščina](http://sl.phptherightway.com)
-* [Srpski](http://phpsrbija.github.io/php-the-right-way/)
-* [Türkçe](http://hkulekci.github.io/php-the-right-way/)
-* [български](http://bg.phptherightway.com)
-* [Русский язык](http://getjump.github.io/ru-php-the-right-way)
-* [Українська](http://iflista.github.com/php-the-right-way)
+* [Slovenščina](https://sl.phptherightway.com)
+* [Srpski](https://phpsrbija.github.io/php-the-right-way/)
+* [Türkçe](https://hkulekci.github.io/php-the-right-way/)
+* [български](https://bg.phptherightway.com)
+* [Русский язык](https://getjump.github.io/ru-php-the-right-way)
+* [Українська](https://iflista.github.io/php-the-right-way/)
 * [العربية](https://adaroobi.github.io/php-the-right-way/)
-* [فارسى](http://novid.github.io/php-the-right-way/)
+* [فارسى](https://novid.github.io/php-the-right-way/)
 * [ภาษาไทย](https://apzentral.github.io/php-the-right-way/)
-* [한국어판](http://modernpug.github.io/php-the-right-way)
-* [日本語](http://ja.phptherightway.com)
-* [简体中文](http://laravel-china.github.io/php-the-right-way/)
-* [繁體中文](http://laravel-taiwan.github.io/php-the-right-way)
+* [한국어판](https://modernpug.github.io/php-the-right-way)
+* [日本語](https://ja.phptherightway.com)
+* [简体中文](https://laravel-china.github.io/php-the-right-way/)
+* [繁體中文](https://laravel-taiwan.github.io/php-the-right-way)
 
 ### 번역
 
@@ -82,14 +82,14 @@ _PHP: The Right Way_ 번역에 관심있으시다면, GitHub에서 이 저장소
 
 ## Who
 
-제 이름은 [Josh Lockhart](http://twitter.com/codeguy) 입니다. 저는 [Slim Framework](http://www.slimframework.com/)를 만들었고,
-[New Media Campaigns](http://www.newmediacampaigns.com/)에 근무하고 있습니다.
+제 이름은 [Josh Lockhart](https://twitter.com/codeguy) 입니다. 저는 [Slim Framework](https://www.slimframework.com/)를 만들었고,
+[New Media Campaigns](https://www.newmediacampaigns.com/)에 근무하고 있습니다.
 
 ### 협력자들
 
-* [Kris Jordan](http://krisjordan.com/)
-* [Phil Sturgeon](http://philsturgeon.co.uk/)
+* [Kris Jordan](https://krisjordan.com/)
+* [Phil Sturgeon](https://philsturgeon.co.uk/)
 
 ## 라이센스
 
-[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
