@@ -6,12 +6,8 @@ anchor:  people_to_follow
 
 ## 유명개발자 {#people_to_follow_title}
 
-* [Rasmus Lerdorf](http://twitter.com/rasmus)
-* [Fabien Potencier](http://twitter.com/fabpot)
-* [Derick Rethans](http://twitter.com/derickr)
-* [Chris Shiflett](http://twitter.com/shiflett)
-* [Sebastian Bergmann](http://twitter.com/s_bergmann)
-* [Matthew Weier O'Phinney](http://twitter.com/mwop)
-* [Pádraic Brady](http://twitter.com/padraicb)
-* [Anthony Ferrara](http://twitter.com/ircmaxell)
-* [Nikita Popov](http://twitter.com/nikita_ppv)
+흥미롭고 유용한 PHP 커뮤니티 멤버들을 찾는 것을 처음 시작할 때는 어렵습니다.
+다음에서 PHP 커뮤니티 멤버들의 목록을 찾을 수 있습니다.
+
+* <https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/>
+* <https://twitter.com/CalEvans/lists/phpeople>

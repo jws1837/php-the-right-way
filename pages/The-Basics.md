@@ -21,15 +21,12 @@ var_dump($a == '5');     // 타입을 무시하고 값을 비교; true
 var_dump($a === 5);      // 타입과 값을 모두 비교 (integer 와 integer); true
 var_dump($a === '5');    // 타입과 값을 (integer 와 string); false
 
-/**
- * 타입을 무시한 비교
- */
+// 타입을 무시한 비교
 if (strpos('testing', 'test')) {    // 'test'가 인덱스 0에서 발견되어 strpos 는 0을 리턴. 0은 false로 취급된다.
     // code...
 }
 
-// vs
-
+// strict 비교
 if (strpos('testing', 'test') !== false) {    // (0 !== false)의 비교 결과는 true 이다.
     // code...
 }
@@ -43,7 +40,7 @@ if (strpos('testing', 'test') !== false) {    // (0 !== false)의 비교 결과�
 
 ### If 구문 {#if-statements}
 
-'if/else' 구문을 함수나 클래스 안에서 사용할 때 흔히 하는 오해는 혹시 발생할 수 있는 경우를 대비해 'else'를 꼭 써야
+'if/else' 구문을 함수나 클래스 메소드 안에서 사용할 때 흔히 하는 오해는 혹시 발생할 수 있는 경우를 대비해 'else'를 꼭 써야
 한다는 것입니다. 하지만 조건문의 결과가 return 값을 정의하는 것 뿐이라면 'else'가 필수적인 것은 아닙니다.
 
 {% highlight php %}
@@ -57,7 +54,7 @@ function test($a)
     }
 }
 
-// vs
+// vs.
 
 function test($a)
 {
@@ -66,6 +63,14 @@ function test($a)
     }
     return false;    // else is not necessary
 }
+
+// or even shorter:
+
+function test($a)
+{
+    return (bool) $a;
+}
+
 {% endhighlight %}
 
 * [If 구문](http://php.net/control-structures.if)
@@ -103,7 +108,7 @@ function test($a)
 }
 {% endhighlight %}
 
-* [Switch 구문](http://php.net/control-structures.switch))
+* [Switch 구문](http://php.net/control-structures.switch)
 * [PHP switch](http://phpswitch.com/)
 
 ## 전역 네임스페이스 {#global-namespace}
@@ -123,7 +128,7 @@ function fopen()
 
 function array()
 {
-    $iterator = new \ArrayIterator();    // ArrayIterator는 내장 클래스이다. 역슬래시 없이 사용하면 
+    $iterator = new \ArrayIterator();    // ArrayIterator는 내장 클래스이다. 역슬래시 없이 사용하면
                                          // phptherightway 라는 네임스페이스에서 ArrayIterator 를 찾으려고 할 것이다.
 }
 {% endhighlight %}
@@ -192,7 +197,7 @@ echo 'phptherightway is ' . $adjective . '.'     // 변수와 이스케이프 �
 
 // vs
 
-echo "phptherightway is $adjective.\n I love learning $code!"  // 큰따옴표 문자열을 사용하면 연결 연산자를 여러번 
+echo "phptherightway is $adjective.\n I love learning $code!"  // 큰따옴표 문자열을 사용하면 연결 연산자를 여러번
                                                                // 쓰지 않고도 한 방에 해결할 수 있다.
 {% endhighlight %}
 
@@ -280,6 +285,27 @@ EOD;                        // 끝을 나타내는 'EOD'는 반드시 줄의 가
 {% endhighlight %}
 
 * [Heredoc 문법](http://php.net/language.types.string#language.types.string.syntax.heredoc)
+
+> It should be noted that multiline strings can also be formed by continuing them across multilines in a statement. _e.g._
+> 여러 줄에 걸쳐 계속 입력하는 방식으로 여러 줄을 작성할 수도 있다는 것에도 주목할 필요가 있습니다. _예를 들어_
+
+{% highlight php %}
+$str = "
+Example of string
+spanning multiple lines
+using statement syntax.
+$a are parsed.
+";
+
+/**
+ * Output:
+ *
+ * Example of string
+ * spanning multiple lines
+ * using statement syntax.
+ * Variables are parsed.
+ */
+{% endhighlight %}
 
 ### 무엇이 더 빠를까? {#which-is-quicker}
 
@@ -377,6 +403,8 @@ return ($a == 3 && $b == 4) && $c == 5;
 return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
 
+PHP 5.3부터 삼항 연사자의 중간 부분을 생략 가능합니다.
+"expr1 ?: expre3" 표현식은 expr1이 TRUE로 평가되는 경우 expr1을 리턴하고, 아닌 경우에 expr3을 리턴합니다.
 * [삼항 연산자](http://php.net/language.operators.comparison)
 
 ## 변수 선언 {#variable-declarations}

@@ -1,11 +1,11 @@
 # 환영합니다!
 
-웹상에는 오래되어 잘못된 정보들이 많습니다. 이런 정보들 때문에 새로 PHP를 접하는 사용자들이 잘못된 길로 접어들고, 
+웹상에는 오래되어 잘못된 정보들이 많습니다. 이런 정보들 때문에 새로 PHP를 접하는 사용자들이 잘못된 길로 접어들고,
 잘못된 습관과 안전하지 못한 코드를 양산하게 됩니다. _PHP: The Right Way_ 는 PHP 를 사용하는 사람들에게 널리 받아들여진
 코딩 표준, 권위있는 튜토리얼로의 링크를 제공하며, 이 프로젝트에 참여하고 있는 공헌자들이 생각하기에
 현 시점에서 PHP의 베스트 프랙티스라고 할 수 있는 내용들을 포함하고 있습니다.
 
-_이것이 PHP를 사용하는 올바른 방법이다_ 라는 규범은 존재하지 않습니다. 이 웹사이트는 
+_이것이 PHP를 사용하는 올바른 방법이다_ 라는 규범은 존재하지 않습니다. 이 웹사이트는
 PHP를 사용하는 사람들이 그동안 생각해보지 않았을지도 모를 몇몇 주제들을 너무 늦지 않게 제공할 수 있기를 바라고 있으며,
 생각해 볼 틈도 없이 몇년이고 반복적으로 해 왔을 몇몇 주제들에 대한 새로운 아이디어를 전달하려고 합니다.
 또한 이 웹사이트는 여러분에게 어떤 도구를 사용하라고 이야기하지는 않을 것입니다. 대신 여러 가지 선택 가능한 대안을 제시하고
@@ -17,38 +17,35 @@ PHP를 사용하는 사람들이 그동안 생각해보지 않았을지도 모�
 
 _PHP: The Right Way_ 는 다양한 언어로 변역되어 있습니다.
 
-* [독일어판](http://rwetzlmayr.github.io/php-the-right-way/)
-* [러시아어판](http://getjump.github.io/ru-php-the-right-way)
-* [루마니아어](https://bgui.github.io/php-the-right-way/)
-* [불가리아어판](http://bg.phptherightway.com/)
-* [세르비아어](http://smatejic.github.io/php-the-right-way/)
-* [스페인어판](http://phpdevenezuela.github.io/php-the-right-way/)
-* [슬로베니아어판](http://sl.phptherightway.com)
-* [영어판](http://www.phptherightway.com)
-* [우크라이나어판](http://iflista.github.com/php-the-right-way/)
-* [이탈리아어](http://it.phptherightway.com)
-* [인도네시아어](http://id.phptherightway.com)
-* [일본어판](http://ja.phptherightway.com)
-* [중국어판 (간체)](http://laravel-china.github.io/php-the-right-way/)
-* [중국어판 (번체)](http://laravel-taiwan.github.io/php-the-right-way)
-* [태국어](https://apzentral.github.io/php-the-right-way/)
-* [터키어판](http://hkulekci.github.io/php-the-right-way/)
-* [페르시아어(이란어)](http://novid.github.io/php-the-right-way/)
-* [포르투갈어판](http://br.phptherightway.com/)
-* [폴란드어판](http://pl.phptherightway.com/)
-* [프랑스어](http://eilgin.github.io/php-the-right-way/)
-* [한국어판](http://modernpug.github.io/php-the-right-way/)
+* [English](http://www.phptherightway.com)
+* [Español](http://phpdevenezuela.github.io/php-the-right-way)
+* [Français](http://eilgin.github.io/php-the-right-way/)
+* [Indonesia](http://id.phptherightway.com)
+* [Italiano](http://it.phptherightway.com)
+* [Polski](http://pl.phptherightway.com)
+* [Português do Brasil](http://br.phptherightway.com)
+* [Română](https://bgui.github.io/php-the-right-way/)
+* [Slovenščina](http://sl.phptherightway.com)
+* [Srpski](http://phpsrbija.github.io/php-the-right-way/)
+* [Türkçe](http://hkulekci.github.io/php-the-right-way/)
+* [български](http://bg.phptherightway.com)
+* [Русский язык](http://getjump.github.io/ru-php-the-right-way)
+* [Українська](http://iflista.github.com/php-the-right-way)
+* [العربية](https://adaroobi.github.io/php-the-right-way/)
+* [فارسى](http://novid.github.io/php-the-right-way/)
+* [ภาษาไทย](https://apzentral.github.io/php-the-right-way/)
+* [한국어판](http://modernpug.github.io/php-the-right-way)
+* [日本語](http://ja.phptherightway.com)
+* [简体中文](https://laravel-china.github.io/php-the-right-way/)
+* [繁體中文](https://laravel-taiwan.github.io/php-the-right-way)
+
+## Book
+
+The most recent version of _PHP: The Right Way_ is also available in PDF, EPUB and MOBI formats. [Go to Leanpub][1]
 
 ## 프로젝트에 기여하기 {#how_to_contribute}
 
-여러분의 도움이 있으면 이 사이트를 PHP 프로그래밍을 새로 시작하는 사람들을 위한 최고의 문서로 만들 수 있습니다! [GitHub 저장소를 통해서 도와주세요.][1]
+여러분의 도움이 있으면 이 사이트를 PHP 프로그래밍을 새로 시작하는 사람들을 위한 최고의 문서로 만들 수 있습니다! [GitHub 저장소를 통해서 도와주세요.][2]
 
-## 널리 알려주세요! {#spread_the_word}
-
-여러분의 웹사이트에 걸어둘 수 있는 _PHP: The Right Way_ 배너 이미지들이 있습니다. 여러분이 _PHP: The Right Way_ 를
-성원하고 있다는 것을 보여주고, 또 새로운 PHP 개발자들이 어디에 가면 좋은 정보를 찾을 수 있는지 알 수 있게 해주세요.
-
-[배너 이미지 보기][2]
-
-[1]: https://github.com/modernpug/php-the-right-way
-[2]: /php-the-right-way/banners.html
+[1]: https://leanpub.com/phptherightway
+[2]: https://github.com/ModernPUG/php-the-right-way/tree/gh-pages
