@@ -39,9 +39,9 @@ _PHP: The Right Way_ 는 다양한 언어로 변역되어 있습니다.
 * [简体中文](https://laravel-china.github.io/php-the-right-way/)
 * [繁體中文](https://laravel-taiwan.github.io/php-the-right-way)
 
-## Book
+## 책
 
-가장 최근 _PHP: The Right Way_ 를 [Go to Leanpub][1] 에서 PDF, EPB, MOBI 형식 문서로도 볼 수 있습니다. 
+가장 최근 _PHP: The Right Way_ (영어판)을 [Leanpub][1] 에서 PDF, EPB, MOBI 형식 문서로도 볼 수 있습니다. 
 
 ## 프로젝트에 기여하기 {#how_to_contribute}
 
