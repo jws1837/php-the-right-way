@@ -41,7 +41,7 @@ _PHP: The Right Way_ 는 다양한 언어로 변역되어 있습니다.
 
 ## Book
 
-The most recent version of _PHP: The Right Way_ is also available in PDF, EPUB and MOBI formats. [Go to Leanpub][1]
+가장 최근 _PHP: The Right Way_ 를 [Go to Leanpub][1] 에서 PDF, EPB, MOBI 형식 문서로도 볼 수 있습니다. 
 
 ## 프로젝트에 기여하기 {#how_to_contribute}
 
