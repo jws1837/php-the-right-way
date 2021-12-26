@@ -28,11 +28,11 @@ PHP는 웹어플리케이션 작성을 주요 목적으로 삼고 있지만, 커
 {% highlight php %}
 <?php
 if ($argc !== 2) {
-    echo "Usage: php hello.php <name>.\n";
+    echo "Usage: php hello.php <name>." . PHP_EOL;
     exit(1);
 }
 $name = $argv[1];
-echo "Hello, $name\n";
+echo "Hello, $name" . PHP_EOL;
 {% endhighlight %}
 
 PHP는 스크립트가 실행될 때 주어진 인자를 가지고 특별한 변수 두 개를 설정합니다. [`$argc`][argc]는 인자 *개수*를
