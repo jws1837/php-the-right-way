@@ -63,6 +63,6 @@ PHP_CodeSniffer 가 있다면, 확인된 코드 레이아웃 문제를 [PHP Code
 [phpcs]: https://pear.php.net/package/PHP_CodeSniffer/
 [phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
-[phpcsfixer]: https://cs.sensiolabs.org/
+[phpcsfixer]: https://cs.symfony.com/
 [cleancode]: https://github.com/jupeter/clean-code-php
 [cleancode-ko]: https://github.com/yujineeee/clean-code-php
