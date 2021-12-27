@@ -84,8 +84,8 @@ require 'vendor/autoload.php';
 
 ### 의존 패키지들의 보안 이슈 확인하기
 
-[Security Advisories Checker]는 `composer.lock` 파일을 확인하여 여러분의 의존관계를 업데이트해야 하는지 알려주는
-웹 서비스와 커맨드라인 도구입니다.
+[Local PHP Security Checker]는 `composer.lock` 파일을 확인하여 의존관계를 업데이트해야 하는지 알려주는
+커맨드라인 도구입니다.
 
 ### Composer를 이용하여 전역 의존 패키지들 관리하기
 
@@ -110,7 +110,7 @@ composer global require phpunit/phpunit
 [Packagist]: https://packagist.org/
 [Twig]: https://twig.symfony.com/
 [libraries.io]: https://libraries.io/
-[Security Advisories Checker]: https://security.symfony.com/
+[Local PHP Security Checker]: https://github.com/fabpot/local-php-security-checker
 [Learn about Composer]: https://getcomposer.org/doc/00-intro.md
 [ComposerSetup]: https://getcomposer.org/Composer-Setup.exe
 [Composer Korean]: http://xpressengine.github.io/Composer-korean-docs/
