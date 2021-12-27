@@ -1,33 +1,37 @@
 ---
-title:   Internationalization and Localization
+title:   국제화와 지역화
 isChild: true
 anchor:  i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## 국제화 Internationalization(i18n)와 지역화 Localization(l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_초심자분들을 위한 안내: i18n과 l10n은 긴 단어를 줄이기 위해서 숫자를 사용한 줄임말(numeronym)입니다. 
+internationalization은 i18n(i 와 n 사이에 18글자가 있음)으로 줄이고, localization 은 l10n 으로 줄이는 식입니다._
 
-First of all, we need to define those two similar concepts and other related things:
+일단 비슷해보이는 것 같은 두 가지 개념과 그에 관련된 다른 개념을 정의부터 할 필요가 있습니다.
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This action is usually done once - preferably, at the beginning of the project, or else you will
-probably need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules required between distinct languages to interoperate strings containing numbers and 
+- **국제화** 란 여러분이 작성한 코드가 다른 언어나 지역에서 사용될 때 리팩터링 없이도 사용이 가능하도록 만든다는 의미입니다.
+이 작업은 보통 프로젝트 초기에 하는 것이 바람직합니다. 그렇지 않으면 아마 소스를 크게 수정해야 할 지도 모릅니다!
+- **지역화 혹은 현지화** 는 이미 i18n 작업이 되어 있는 것에 기반하여, (주로) 콘텐츠를 다른 언어로 번역할 때 일어납니다.
+보통 새로운 언어나 지역에 제품을 제공하려고 할 때마다 지역화 작업을 하게 됩니다. 그리고 새로 추가된 사용자 인터페이스가 생기면
+지원하는 모든 언어로 제공이 되어야 할 것이므로 그 때에도 지역화 작업이 있을 것입니다.
+- **복수화(Pluralization)** 란 숫자나 개수를 포함하는 문자열을 각 언어마다 어떻게 표현할 지 규칙을 정하는 것입니다.
+예를 들면 영어에서는 사물이 하나만 있으면 단수형, 그 외에는 복수형으로 지칭합니다.
+영어의 복수형은 단어 뒤에 S 를 붙이는 형태이지만, 때로는 단어의 일부를 변형해서 나타내기도 합니다.
+러시아어나 세르비아어에서는 단수형 외에 두 가지로 복수형이 있습니다.
+총 네 가지나 대여섯 가지 형태를 사용하는 슬로베니아어,아일랜드어, 아라비아어도 존재합니다.
+- **복수화(Pluralization)** defines the rules required between distinct languages to interoperate strings containing numbers and 
 counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
 called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
 In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
 find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This way is, however, hardly recommended for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## 일반적인 구현 방법
+PHP로 만든 소프트웨어를 국제화하는 가장 쉬운 방법은 배열 파일을 만든 후 그걸 템플릿 파일에서 
+`<h1><?=$TRANS['title_about_page']?></h1>` 같은 식으로 사용하는 것입니다. 하지만 이런 방법은 복수화 작업 같이 프로젝트 아주 초반에도
+발견될 수 있는 문제 등 유지관리에 계속 문제를 일으킬 것이므로 제대로된 프로젝트에서는 권할 수 없는 방법입니다.
+그러므로 페이지 몇 개만으로 구성된 프로젝트가 아니라면 이런 방법은 시도조차 하지 않는 것이 좋습니다.
 
 The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
 back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
