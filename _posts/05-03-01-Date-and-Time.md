@@ -20,7 +20,7 @@ DateTime 클래스를 사용하려면 문자열 형태로 표현한 날짜와 �
 $raw = '22. 11. 1968';
 $start = DateTime::createFromFormat('d. m. Y', $raw);
 
-echo 'Start date: ' . $start->format('Y-m-d') . "\n";
+echo 'Start date: ' . $start->format('Y-m-d') . PHP_EOL;
 {% endhighlight %}
 
 DateInterval 클래스를 이용해서 DateTime을 이용한 계산이 가능합니다. DateTime 클래스에는 DateInterval을 인자로 받는 
@@ -35,7 +35,7 @@ $end = clone $start;
 $end->add(new DateInterval('P1M6D'));
 
 $diff = $end->diff($start);
-echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . "\n";
+echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . PHP_EOL;
 // Difference: 1 month, 6 days (total: 37 days)
 {% endhighlight %}
 
@@ -43,7 +43,7 @@ DateTime 객체를 일반적인 비교 연산자를 이용해서 비교하는 �
 {% highlight php %}
 <?php
 if ($start < $end) {
-    echo "Start is before the end!\n";
+    echo "Start is before the end!" . PHP_EOL;
 }
 {% endhighlight %}
 
