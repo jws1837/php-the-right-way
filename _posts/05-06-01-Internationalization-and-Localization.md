@@ -21,11 +21,6 @@ internationalization은 i18n(i 와 n 사이에 18글자가 있음)으로 줄이�
 영어의 복수형은 단어 뒤에 S 를 붙이는 형태이지만, 때로는 단어의 일부를 변형해서 나타내기도 합니다.
 러시아어나 세르비아어에서는 단수형 외에 두 가지로 복수형이 있습니다.
 총 네 가지나 대여섯 가지 형태를 사용하는 슬로베니아어,아일랜드어, 아라비아어도 존재합니다.
-- **복수화(Pluralization)** defines the rules required between distinct languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
 
 ## 일반적인 구현 방법
 PHP로 만든 소프트웨어를 국제화하는 가장 쉬운 방법은 배열 파일을 만든 후 그걸 템플릿 파일에서 
@@ -33,20 +28,20 @@ PHP로 만든 소프트웨어를 국제화하는 가장 쉬운 방법은 배열 
 발견될 수 있는 문제 등 유지관리에 계속 문제를 일으킬 것이므로 제대로된 프로젝트에서는 권할 수 없는 방법입니다.
 그러므로 페이지 몇 개만으로 구성된 프로젝트가 아니라면 이런 방법은 시도조차 하지 않는 것이 좋습니다.
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
-still sporting powerful supporting tools. It is about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source
+가장 전형적이면서 또 자주 i18n과 l10n의 레퍼런스로 언급되는 방법은 [`gettext` 라는 유닉스 도구입니다][gettext]. 1995년에
+등장하여 지금까지도 여전히 번역 소프트웨어로서 완전한 구현을 보여줍니다. 바로 사용할 수 있을만큼 쉬우면서도
+강력한 도구를 제공합니다. 여기서 Gettext 에 대해 이야기하겠습니다. 그리고 커맨드라인 도구로 머리가
+복잡해 지지 않도록 훌륭한 GUI 어플리케이션을 보여드릴 겁니다. 이 어플리케이션으로 쉽게 l10n 소스를 업데이트할 수 있을 것입니다.
 
-### Other tools
+### 다른 도구들
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the
-PHP core, but here we list others for completion:
+Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이브러리들이 있습니다. 이들 중 몇몇은 설치하기에 더 쉽거나
+다른 기능을 더 제공할 것입니다. 이 문서에서는 PHP 코어에서 제공되는 툴들에 집중하겠지만
+다른 라이브러리도 나열해보았습니다.
 
-- [aura/intl][aura-intl]: Provides internationalization (I18N) tools, specifically package-oriented per-locale message
-translation. It uses array formats for message. Does not provide a message extractor, but does provide advanced
-message formatting via the `intl` extension (including pluralized messages).
+- [aura/intl][aura-intl]: 는 I18N 도구를 제공하는데, 특히 패키지 지향적인 
+지역별 메시지 번역에 집중되어 있습니다. 메시지는 배열 형식으로 관리합니다. 메시지 추출기는 제공하지 않지만
+`intl` 확장을 이용해서 (복수형 메시지를 포함한) 고급 메시지 포매팅 기능을 제공합니다.
 - [oscarotero/Gettext][oscarotero]: Gettext support with an OO interface; includes improved helper functions, powerful
 extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
 to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other
