@@ -70,15 +70,15 @@ Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이�
 번역 파일을 만들 때에는 [Poedit]을 사용하려고 합니다. 사용하는 시스템의 패키지 매니저에서
 Poedit을 찾을 수 있을 겁니다. [Poedit 웹 사이트에서 무료로 다운로드][poedit_download]해서 사용할 수도 있습니다.
 
-### Structure
+### 구조
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, which simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you are using to do l10n, you can go just fine with only PO/MO files.
-You will always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### 파일 유형
+gettext를 사용할 때 주로 작업하게 되는 파일이 세 종류 있습니다. 주요 파일은 PO (Portable Object)와
+MO (Machine Object) 파일인데 PO는 사람이 읽을 수도 있는 "번역된 오브젝트" 목록이고 MO는
+gettext 가 지역화를 할 때 읽는 바이너리 파일입니다. POT (템플릿) 파일도 있는데, 
+여러분의 소스 파일에 있는 모든 키를 가지고 있어서 PO 파일을 생성하거나 업데이트 할 때 가이드로 사용되는 파일입니다.
+템플릿 파일이 꼭 필요한 것은 아닙니다. PO/MO 파일만 사용해도 괜찮습니다.
+번역한 언어마다 한 쌍의 PO/MO 파일이 꼭 있어야 하고, POT 파일은 도메인마다 하나씩 존재하는 구조입니다.
 
 ### Domains
 There are some cases, in big projects, where you might need to separate translations when the same words convey 
