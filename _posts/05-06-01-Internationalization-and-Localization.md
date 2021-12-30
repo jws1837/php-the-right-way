@@ -53,24 +53,22 @@ Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이�
 
 다른 프레임워크들도 i18n 모듈을 가지고 있지만 해당 프레임워크 밖에서는 사용할 수 없습니다.
 
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+- [Laravel] 은 기본적인 배열 파일 형식을 지원합니다. 자동 추출기는 없지만 템플릿 파일에서 사용할 수 있는 `@lang` 헬퍼 함수가 있습니다.
+- [Yii] 는 배열, Gettext, 데이터베이스를 사용한 번역 방식을 제공하며 메시지 추출기도 포함하고 있습니다.
+[`Intl`][intl]이라는 확장을 이용해서 이런 기능을 제공하는데, 이 확장은 [ICU project]를 기반으로 하고 있고 PHP 5.3 부터 사용가능합니다.
+그래서 Yii 에서는 숫자, 날짜, 시간, 시간 간격(intervals), 통화, 서수(ordinals) 의 포미팅 등 강력한 치환 기능을 사용할 수 있습니다.
 
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+추출기를 제공하지 않는 라이브러리를 사용하기로 결정했다면, gettext 포맷을 사용하는 것이 좋을 것 같습니다.
+그러면 이 장의 나머지 부분에서 설명하는대로 Poedit를 포함한 gettext의 여러 도구들을 사용할 수 있습니다.
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### 설치
+여러분이 사용하고 있는 시스템에 따라, `apt-get` 이나 `yum` 같은 패키지 매니저를 사용해서 Gettext와 PHP 라이브러리를 설치하면 됩니다.
+설치 후에는 `extension=gettext.so` (Linux/Unix) 나 `extension=php_gettext.dll` (Windows) 를 `php.ini` 파일에 추가합니다.
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it is available for Unix, Mac, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+번역 파일을 만들 때에는 [Poedit]을 사용하려고 합니다. 사용하는 시스템의 패키지 매니저에서
+Poedit을 찾을 수 있을 겁니다. [Poedit 웹 사이트에서 무료로 다운로드][poedit_download]해서 사용할 수도 있습니다.
 
 ### Structure
 
