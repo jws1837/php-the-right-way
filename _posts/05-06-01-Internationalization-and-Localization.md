@@ -19,7 +19,7 @@ internationalization은 i18n(i 와 n 사이에 18글자가 있음)으로 줄이�
 - **복수화(Pluralization)** 란 숫자나 개수를 포함하는 문자열을 각 언어마다 어떻게 표현할 지 규칙을 정하는 것입니다.
 예를 들면 영어에서는 사물이 하나만 있으면 단수형, 그 외에는 복수형으로 지칭합니다.
 영어의 복수형은 단어 뒤에 S 를 붙이는 형태이지만, 때로는 단어의 일부를 변형해서 나타내기도 합니다.
-러시아어나 세르비아어에서는 단수형 외에 두 가지로 복수형이 있습니다.
+러시아어나 세르비아어에서는 단수형 외에 두 가지 복수형이 있습니다.
 총 네 가지나 대여섯 가지 형태를 사용하는 슬로베니아어,아일랜드어, 아라비아어도 존재합니다.
 
 ## 일반적인 구현 방법
@@ -80,17 +80,19 @@ gettext 가 지역화를 할 때 읽는 바이너리 파일입니다. POT (템�
 템플릿 파일이 꼭 필요한 것은 아닙니다. PO/MO 파일만 사용해도 괜찮습니다.
 번역한 언어마다 한 쌍의 PO/MO 파일이 꼭 있어야 하고, POT 파일은 도메인마다 하나씩 존재하는 구조입니다.
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They are, basically, named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+### 도메인
+큰 프로젝트에서는 맥락에 따라 같은 단어라도 다른 의미를 나타내는 경우가 있어, 서로 분리해서 번역을 해야하는
+일이 있습니다. 그런 경우 번역 결과물을 서로 다른 _도메인_ 으로 분리하면 됩니다. 기본적으로 도메인은
+서로 다른 이름으로 그룹 지은 POT/PO/MO 파일들입니다. 그 파일 이름이 _번역 도메인_ 입니다. 소규모에서 중간 정도 규모의
+프로젝트에서는 도메인 하나만 사용하는 편이 일반적입니다. 그 편이 단순해서 좋습니다. 그 때 도메인 이름은 아무렇게나 지어도
+되지만 우리 예제에서는 "main" 이라고 하겠습니다.
+도메인을 사용하는 예로, [Symfony] 프로젝트에서는 검증 로직에서 사용되는 메시지 번역을 구분하는데에 도메인을 사용하고 있습니다.
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It is defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+#### 로케일 코드
+로케일이란 간단히 말하자면 한 가지 언어를 지칭하는 코드값입니다. 로케일은 [ISO 639-1][639-1] 와 [ISO 3166-1 alpha-2][3166-1] 라는
+명세를 따릅니다. 언어를 나타내기 위해서 소문자 알파벳 두개를 사용하고, 선택적으로 그 뒤에 국가나 지역 코드를 붙입니다.
+언어 코드 뒤에 밑줄을 붙이고 국가나 지역 코드를 지칭하는 대문자 알파벳 두 글자를 붙이는데, [드물게][rare] 세글자로 된 
+국가코드를 사용하는 경우도 있습니다.
 
 For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
 countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
