@@ -94,9 +94,9 @@ gettext 가 지역화를 할 때 읽는 바이너리 파일입니다. POT (템�
 언어 코드 뒤에 밑줄을 붙이고 국가나 지역 코드를 지칭하는 대문자 알파벳 두 글자를 붙이는데, [드물게][rare] 세글자로 된 
 국가코드를 사용하는 경우도 있습니다.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it is not present, it is taken as a "generic" or "hybrid" version of the language.
+어떤 언어 사용자에게는 로케일의 국가 부분은 군더더기처럼 보일 겁니다. 그런데 또 어떤 언어는 국가별로
+다른 사투리가 있습니다. 오스트리아 독일어 (`de_AT`)나 브라질 포르투갈어 (`pt_BR`)가 그렇습니다. 로케일 코드의 두 번째 부분은 이런 지역별 사투리를
+구분하기 위해서 사용됩니다. 그 부분이 생략되면 "일반적인" 혹은 "혼합된" 버전의 언어를 지칭하는 것으로 받아들이면 됩니다.
 
 ### Directory structure
 To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
