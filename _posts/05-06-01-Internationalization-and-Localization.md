@@ -98,10 +98,10 @@ gettext 가 지역화를 할 때 읽는 바이너리 파일입니다. POT (템�
 다른 사투리가 있습니다. 오스트리아 독일어 (`de_AT`)나 브라질 포르투갈어 (`pt_BR`)가 그렇습니다. 로케일 코드의 두 번째 부분은 이런 지역별 사투리를
 구분하기 위해서 사용됩니다. 그 부분이 생략되면 "일반적인" 혹은 "혼합된" 버전의 언어를 지칭하는 것으로 받아들이면 됩니다.
 
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you will have a folder for each needed locale, and a
-fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### 디렉토리 구조
+Gettext 를 사용할 때 맞춰야하는 폴더 구조가 있습니다. 일단은 소스 저장소 폴더 안에 l10n 파일을 모두 넣을 폴더 하나를 정해야 합니다. 
+이 폴더 이름은 자유롭게 정해도 됩니다. 그 폴더 아래에 필요한 로케일 마다 폴더 하나씩을 만듭니다. 폴더 이름은 로케일 코드입니다. 
+로케일 폴더 안에는 `LC_MESSAGES` 라는 폴더가 꼭 있어야 합니다. `LC_MESSAGES` 폴더에는 PO/MO 파일을 둡니다. 아래 예시를 참고하세요. 
 
 {% highlight console %}
 <project root>
