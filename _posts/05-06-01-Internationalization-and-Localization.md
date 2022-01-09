@@ -127,27 +127,26 @@ Gettext 를 사용할 때 맞춰야하는 폴더 구조가 있습니다. 일단�
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you will have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you will have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### 복수형
+앞서 이야기한 것처럼 언어마다 복수형을 표현하는 방법이 다릅니다. 하지만 gettext를 사용하면 문제를 피할 수 있습니다.
+gettext 에서는 `.po` 파일마다 사용하는 언어에 맞는 [복수형 규칙][plural] 을 선언하게 되어 있습니다.
+그리고 단수형과 복수형일 때 다르게 표시되어야 하는 문자열은 번역할 때 각 규칙에 맞는 형태의 문자열을 번역해서 넣게 되어 있습니다.
+Gettext 함수를 호출하는 코드에는 해당 문자열에서 사용되는 숫자를 명시해 줍니다. 그러면 숫자에 맞게 단수형 혹은 복수형 중 맞는 번역 문자열이 사용됩니다.
+문자열 치환이 필요한 경우에도 문제 없이 잘 동작합니다. 
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+"복수형 규칙"에는 이 언어에 몇 가지 복수형이 있는지와 주어진 숫자 `n` 에 대해서 어느 복수형을 사용하는 게 맞는지 결정할 수 있는 식이 들어 있습니다.
+아래 예를 보시죠.
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- 일본어: `nplurals=1; plural=0` - 규칙이 하나만 있음.
+- 영어: `nplurals=2; plural=(n != 1);` - 두 가지 규칙이 있음. N이 1이면 첫 번째, 그 외에는 두 번째 규칙 사용.
+- 브라질 포르투칼어: `nplurals=2; plural=(n > 1);` - 두 가지 규칙이 있음. N이 1보다 크면 두 번째 규칙 사용, 그 외에는 첫 번째 규칙 사용.
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+이제 복수형 규칙이 어떤 식으로 동작하는지 이해했으므로, [목록][plural] 중에서 적합한 규칙을 복사해서 사용하면 됩니다.
+혹시 좀더 자세한 설명을 보고 싶다면 [LingoHub 튜토리얼][lingohub_plurals]을 참고하세요.
 
-When calling out Gettext to do localization on sentences with counters, you will have to provide it the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
+갯수를 포함한 문자열을 인자로 지정해서 Gettext 함수를 호출하는 코드에는 반드시
+그 갯수도 인자로 지정해야 합니다. 그러면 번역 문자열 들 중 그 수에 맞는 것을 잘 찾아서 사용하게 될 것입니다.
+그러기 위해서는 `.po` 파일에다 각 복수형 규칙에 해당하는 번역 문자열을 써두어야 합니다.
 
 ### Sample implementation
 After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
