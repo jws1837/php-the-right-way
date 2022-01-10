@@ -148,9 +148,9 @@ Gettext 함수를 호출하는 코드에는 해당 문자열에서 사용되는 
 그 갯수도 인자로 지정해야 합니다. 그러면 번역 문자열 들 중 그 수에 맞는 것을 잘 찾아서 사용하게 될 것입니다.
 그러기 위해서는 `.po` 파일에다 각 복수형 규칙에 해당하는 번역 문자열을 써두어야 합니다.
 
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but with the overall content instead; you will learn how to edit it easily later:
+### 구현 예시
+이론은 많이 보았으니, 간단히 실전을 경험해봅시다. `.po` 파일의 일부를 같이 봅시다. 파일 포맷은 자세히 보지 않아도 됩니다.
+대신 내용이 전반적으로 어떻게 되어 있는지를 보는 게 좋습니다. 이 파일을 편하게 수정하는 방법은 나중에 배우게 될 것입니다.
 
 {% highlight po %}
 msgid ""
@@ -171,16 +171,17 @@ msgstr[0] "Só uma mensagem não lida"
 msgstr[1] "%d mensagens não lidas"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
 plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it is
-advised not to use a complex language as the source of translation.
+빈 `msgid`와 `msgstr`이 있는 첫 부분은 파일 헤더처럼 동작합니다. 파일 인코딩과 함께
+복수형도 설정하고 있고, 그외에 크게 관련이 없는 것들이 기술되어 있습니다.
+두 번째 덩어리에서는 간단한 영어 문자열을 브라질 포르투칼어로 번역해 둔 것을 볼 수 있고,
+세 번째 덩어리는 두 번째 덩어리와 거의 같은데, [`sprintf`][sprintf]로 문자열 치환을 해서
+사용자 이름과 방문 날짜를 포함하게 될 것 같습니다.
+마지막 부분에서는 복수형을 다루는 예시를 볼 수 있습니다.
+영어로 단수형과 복수형에 해당하는 `msgid`가 있고, 그에 해당하는 번역이 `msgstr` 0과 1로
+번역되어 있습니다. 복수형에는 `%d` 로 문자열 치환을 사용해서 메시지 내에 숫자를 표시하게 되어 있습니다.
+복수형을 구분해서 표현하는 곳에는 항상 `msgid` 가 두 개(단수형과 복수형) 나타납니다. 그러므로
+번역의 원본이 되는 언어는 복잡하지 않은 언어를 사용하는 편이 좋습니다.
 
 ### Discussion on l10n keys
 As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used
