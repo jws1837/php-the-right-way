@@ -8,7 +8,7 @@ anchor:  date_and_time
 
 날짜와 시간을 읽고, 쓰고, 비교하고, 계산할 때 사용할 수 있는 DateTime 이라는 클래스가 있습니다. PHP에는 DateTime 외에도
 날짜와 시간을 다루는 많은 함수들이 있지만 DateTime 클래스는 일반적인 사용 시나리오에 맞는 괜찮은 객체지향적인
-인터페이스를 제공합니다. 시간대(time zone)을 다루는 기능도 갖추고 있지만 이 사이트의 짧은 소개에서 다룰만한 범위는
+인터페이스를 제공합니다. DateTime 클래스는 시간대(time zone)을 다루는 기능도 갖추고 있지만 이 사이트의 짧은 소개에서 다룰만한 범위는
 아닙니다.
 
 DateTime 클래스를 사용하려면 문자열 형태로 표현한 날짜와 시간 정보를 `createFromFormat()` 팩토리 메소드를 사용해서
@@ -20,7 +20,7 @@ DateTime 클래스를 사용하려면 문자열 형태로 표현한 날짜와 �
 $raw = '22. 11. 1968';
 $start = DateTime::createFromFormat('d. m. Y', $raw);
 
-echo 'Start date: ' . $start->format('Y-m-d') . "\n";
+echo 'Start date: ' . $start->format('Y-m-d') . PHP_EOL;
 {% endhighlight %}
 
 DateInterval 클래스를 이용해서 DateTime을 이용한 계산이 가능합니다. DateTime 클래스에는 DateInterval을 인자로 받는 
@@ -35,7 +35,7 @@ $end = clone $start;
 $end->add(new DateInterval('P1M6D'));
 
 $diff = $end->diff($start);
-echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . "\n";
+echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . PHP_EOL;
 // Difference: 1 month, 6 days (total: 37 days)
 {% endhighlight %}
 
@@ -43,7 +43,7 @@ DateTime 객체를 일반적인 비교 연산자를 이용해서 비교하는 �
 {% highlight php %}
 <?php
 if ($start < $end) {
-    echo "Start is before the end!\n";
+    echo "Start is before the end!" . PHP_EOL;
 }
 {% endhighlight %}
 

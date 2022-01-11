@@ -1,109 +1,107 @@
 ---
-title:   Internationalization and Localization
+title:   국제화와 지역화
 isChild: true
 anchor:  i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## 국제화 Internationalization(i18n)와 지역화 Localization(l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_초심자분들을 위한 안내: i18n과 l10n은 긴 단어를 줄이기 위해서 숫자를 사용한 줄임말(numeronym)입니다. 
+internationalization은 i18n(i 와 n 사이에 18글자가 있음)으로 줄이고, localization 은 l10n 으로 줄이는 식입니다._
 
-First of all, we need to define those two similar concepts and other related things:
+일단 비슷해보이는 것 같은 두 가지 개념과 그에 관련된 다른 개념을 정의부터 할 필요가 있습니다.
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This action is usually done once - preferably, at the beginning of the project, or else you will
-probably need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules required between distinct languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
+- **국제화** 란 여러분이 작성한 코드가 다른 언어나 지역에서 사용될 때 리팩터링 없이도 사용이 가능하도록 만든다는 의미입니다.
+이 작업은 보통 프로젝트 초기에 하는 것이 바람직합니다. 그렇지 않으면 아마 소스를 크게 수정해야 할 지도 모릅니다!
+- **지역화 혹은 현지화** 는 이미 i18n 작업이 되어 있는 것에 기반하여, (주로) 콘텐츠를 다른 언어로 번역할 때 일어납니다.
+보통 새로운 언어나 지역에 제품을 제공하려고 할 때마다 지역화 작업을 하게 됩니다. 그리고 새로 추가된 사용자 인터페이스가 생기면
+지원하는 모든 언어로 제공이 되어야 할 것이므로 그 때에도 지역화 작업이 있을 것입니다.
+- **복수화(Pluralization)** 란 숫자나 개수를 포함하는 문자열을 각 언어마다 어떻게 표현할 지 규칙을 정하는 것입니다.
+예를 들면 영어에서는 사물이 하나만 있으면 단수형, 그 외에는 복수형으로 지칭합니다.
+영어의 복수형은 단어 뒤에 S 를 붙이는 형태이지만, 때로는 단어의 일부를 변형해서 나타내기도 합니다.
+러시아어나 세르비아어에서는 단수형 외에 두 가지 복수형이 있습니다.
+총 네 가지나 대여섯 가지 형태를 사용하는 슬로베니아어,아일랜드어, 아라비아어도 존재합니다.
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This way is, however, hardly recommended for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## 일반적인 구현 방법
+PHP로 만든 소프트웨어를 국제화하는 가장 쉬운 방법은 배열 파일을 만든 후 그걸 템플릿 파일에서 
+`<h1><?=$TRANS['title_about_page']?></h1>` 같은 식으로 사용하는 것입니다. 하지만 이런 방법은 복수화 작업 같이 프로젝트 아주 초반부터
+불거질 수 있는 문제 등, 유지관리 하기 어렵게 만드는 원인이 되므로 제대로된 프로젝트에는 권할 수 없는 방법입니다.
+그러므로 페이지 몇 개만으로 구성된 프로젝트가 아니라면 이런 방법은 시도조차 하지 않는 것이 좋습니다.
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
-still sporting powerful supporting tools. It is about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source
+가장 전형적이면서 또 자주 i18n과 l10n의 레퍼런스로 언급되는 방법은 [`gettext` 라는 유닉스 도구입니다][gettext]. 1995년에
+등장하여 지금까지도 여전히 번역 소프트웨어로서 완전한 구현을 보여줍니다. 바로 사용할 수 있을만큼 쉬우면서도
+강력한 도구를 제공합니다. 여기서 Gettext 에 대해 이야기하겠습니다. 그리고 커맨드라인 도구로 머리가
+복잡해 지지 않도록 훌륭한 GUI 어플리케이션을 보여드릴 겁니다. 이 어플리케이션으로 쉽게 l10n 소스를 업데이트할 수 있을 것입니다.
 
-### Other tools
+### 다른 도구들
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the
-PHP core, but here we list others for completion:
+Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이브러리들이 있습니다. 이들 중 몇몇은 설치하기에 더 쉽거나
+다른 기능을 더 제공할 것입니다. 이 문서에서는 PHP 코어에서 제공되는 툴들에 집중하겠지만
+다른 라이브러리도 나열해보았습니다.
 
-- [aura/intl][aura-intl]: Provides internationalization (I18N) tools, specifically package-oriented per-locale message
-translation. It uses array formats for message. Does not provide a message extractor, but does provide advanced
-message formatting via the `intl` extension (including pluralized messages).
-- [oscarotero/Gettext][oscarotero]: Gettext support with an OO interface; includes improved helper functions, powerful
-extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
-to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other
-parts of the system, like a JavaScript interface.
-- [symfony/translation][symfony]: supports a lot of different formats, but recommends using verbose XLIFF's. Doesn't
-include helper functions nor a built-in extractor, but supports placeholders using `strtr()` internally.
-- [zend/i18n][zend]: supports array and INI files, or Gettext formats. Implements a caching layer to save you from
-reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators.
-However, it has no message extractor.
+- [aura/intl][aura-intl]: I18N 도구를 제공하는데, 특히 패키지 지향적인 
+지역별 메시지 번역에 집중되어 있습니다. 메시지는 배열 형식으로 관리합니다. 메시지 추출기는 제공하지 않지만
+`intl` 확장을 이용해서 (복수형 메시지를 포함한) 고급 메시지 포매팅 기능을 제공합니다.
+- [oscarotero/Gettext][oscarotero]: Gettext 를 객체지향 인터페이스로 지원합니다. 향상된 헬퍼 함수들, 
+`gettext` 커맨드가 자체적으로는 지원하지 못하는 것을 포함한 여러가지 파일 포맷을 지원하는 강력한 메시지 추출기를 가지고 있습니다.
+그리고 `.mo/.po` 같은 다른 파일 포맷으로 내보내기도 할 수 있습니다.
+- [symfony/translation][symfony]: 많은 종류의 파일 포맷을 지원하지만 조금 장황한 XLIFF 포맷을 권장합니다.
+헬퍼 함수나 내장 메시지 추출기 등을 포함하고 있지는 않지만 `strtr()`을 이용한 플레이스홀더를 지원합니다.
+- [zend/i18n][zend]: 배열과 INI 파일, Gettext 파일 포맷을 지원합니다. 매번 파일시스템에서 읽어들이지 않아도 되도록
+캐싱 레이어를 구현했습니다. 그리고 뷰 헬퍼, 로케일을 자동 인식해서 처리하는 입력값 필터와 검증기도 제공합니다.
+하지만 메시지 추출기는 제공하지 않습니다.
 
-Other frameworks also include i18n modules, but those are not available outside of their codebases:
+다른 프레임워크들도 i18n 모듈을 가지고 있지만 해당 프레임워크 밖에서는 사용할 수 없습니다.
 
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+- [Laravel] 은 기본적인 배열 파일 형식을 지원합니다. 자동 추출기는 없지만 템플릿 파일에서 사용할 수 있는 `@lang` 헬퍼 함수가 있습니다.
+- [Yii] 는 배열, Gettext, 데이터베이스를 사용한 번역 방식을 제공하며 메시지 추출기도 포함하고 있습니다.
+[`Intl`][intl]이라는 확장을 이용해서 이런 기능을 제공하는데, 이 확장은 [ICU project]를 기반으로 하고 있고 PHP 5.3 부터 사용가능합니다.
+그래서 Yii 에서는 숫자, 날짜, 시간, 시간 간격(intervals), 통화, 서수(ordinals) 의 포매팅 등 강력한 치환 기능을 사용할 수 있습니다.
 
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+추출기를 제공하지 않는 라이브러리를 사용하기로 결정했다면, gettext 포맷을 사용하는 것이 좋을 것 같습니다.
+그러면 이 장의 나머지 부분에서 설명하는대로 Poedit를 포함한 gettext의 여러 도구들을 사용할 수 있습니다.
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### 설치
+여러분이 사용하고 있는 시스템에 따라, `apt-get` 이나 `yum` 같은 패키지 매니저를 사용해서 Gettext와 PHP 라이브러리를 설치하면 됩니다.
+설치 후에는 `extension=gettext.so` (Linux/Unix) 나 `extension=php_gettext.dll` (Windows) 를 `php.ini` 파일에 추가합니다.
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it is available for Unix, Mac, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+번역 파일을 만들 때에는 [Poedit]을 사용하려고 합니다. 사용하는 시스템의 패키지 매니저에서
+Poedit을 찾을 수 있을 겁니다. [Poedit 웹 사이트에서 무료로 다운로드][poedit_download]해서 사용할 수도 있습니다.
 
-### Structure
+### 구조
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, which simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you are using to do l10n, you can go just fine with only PO/MO files.
-You will always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### 파일 유형
+gettext를 사용할 때 주로 작업하게 되는 파일이 세 종류 있습니다. 주요 파일은 PO (Portable Object)와
+MO (Machine Object) 파일인데 PO는 사람이 읽을 수도 있는 "번역된 오브젝트" 목록이고 MO는
+gettext 가 지역화를 할 때 읽는 바이너리 파일입니다. POT (템플릿) 파일도 있는데, 
+여러분의 소스 파일에 있는 모든 키를 가지고 있어서 PO 파일을 생성하거나 업데이트 할 때 가이드로 사용되는 파일입니다.
+템플릿 파일이 꼭 필요한 것은 아닙니다. PO/MO 파일만 사용해도 괜찮습니다.
+번역한 언어마다 한 쌍의 PO/MO 파일이 꼭 있어야 하고, POT 파일은 도메인마다 하나씩 존재하는 구조입니다.
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They are, basically, named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+### 도메인
+큰 프로젝트에서는 맥락에 따라 같은 단어라도 다른 의미를 나타내는 경우가 있어, 서로 분리해서 번역을 해야하는
+일이 있습니다. 그런 경우 번역 결과물을 서로 다른 _도메인_ 으로 분리하면 됩니다. 기본적으로 도메인은
+서로 다른 이름으로 그룹 지은 POT/PO/MO 파일들입니다. 그 파일 이름이 _번역 도메인_ 입니다. 소규모에서 중간 정도 규모의
+프로젝트에서는 도메인 하나만 사용하는 편이 일반적입니다. 그 편이 단순해서 좋습니다. 그 때 도메인 이름은 아무렇게나 지어도
+되지만 우리 예제에서는 "main" 이라고 하겠습니다.
+도메인을 사용하는 예로, [Symfony] 프로젝트에서는 검증 로직에서 사용되는 메시지 번역을 구분하는데에 도메인을 사용하고 있습니다.
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It is defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+#### 로케일 코드
+로케일이란 간단히 말하자면 한 가지 언어를 지칭하는 코드값입니다. 로케일은 [ISO 639-1][639-1] 와 [ISO 3166-1 alpha-2][3166-1] 라는
+명세를 따릅니다. 언어를 나타내기 위해서 소문자 알파벳 두개를 사용하고, 선택적으로 그 뒤에 국가나 지역 코드를 붙입니다.
+언어 코드 뒤에 밑줄을 붙이고 국가나 지역 코드를 지칭하는 대문자 알파벳 두 글자를 붙이는데, [드물게][rare] 세글자로 된 
+국가코드를 사용하는 경우도 있습니다.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it is not present, it is taken as a "generic" or "hybrid" version of the language.
+어떤 언어 사용자에게는 로케일의 국가 부분은 군더더기처럼 보일 겁니다. 그런데 또 어떤 언어는 국가별로
+다른 사투리가 있습니다. 오스트리아 독일어 (`de_AT`)나 브라질 포르투갈어 (`pt_BR`)가 그렇습니다. 로케일 코드의 두 번째 부분은 이런 지역별 사투리를
+구분하기 위해서 사용됩니다. 그 부분이 생략되면 "일반적인" 혹은 "혼합된" 버전의 언어를 지칭하는 것으로 받아들이면 됩니다.
 
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you will have a folder for each needed locale, and a
-fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### 디렉토리 구조
+Gettext 를 사용할 때 맞춰야하는 폴더 구조가 있습니다. 일단은 소스 저장소 폴더 안에 l10n 파일을 모두 넣을 폴더 하나를 정해야 합니다. 
+이 폴더 이름은 자유롭게 정해도 됩니다. 그 폴더 아래에 필요한 로케일 마다 폴더 하나씩을 만듭니다. 폴더 이름은 로케일 코드입니다. 
+로케일 폴더 안에는 `LC_MESSAGES` 라는 폴더가 꼭 있어야 합니다. `LC_MESSAGES` 폴더에는 PO/MO 파일을 둡니다. 아래 예시를 참고하세요. 
 
 {% highlight console %}
 <project root>
@@ -129,31 +127,30 @@ fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you will have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you will have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### 복수형
+앞서 이야기한 것처럼 언어마다 복수형을 표현하는 방법이 다릅니다. 하지만 gettext를 사용하면 문제를 피할 수 있습니다.
+gettext 에서는 `.po` 파일마다 사용하는 언어에 맞는 [복수형 규칙][plural] 을 선언하게 되어 있습니다.
+그리고 단수형과 복수형일 때 다르게 표시되어야 하는 문자열은 번역할 때 각 규칙에 맞는 형태의 문자열을 번역해서 넣게 되어 있습니다.
+Gettext 함수를 호출하는 코드에는 해당 문자열에서 사용되는 숫자를 명시해 줍니다. 그러면 숫자에 맞게 단수형 혹은 복수형 중 맞는 번역 문자열이 사용됩니다.
+문자열 치환이 필요한 경우에도 문제 없이 잘 동작합니다. 
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+"복수형 규칙"에는 이 언어에 몇 가지 복수형이 있는지와 주어진 숫자 `n` 에 대해서 어느 복수형을 사용하는 게 맞는지 결정할 수 있는 식이 들어 있습니다.
+아래 예를 보시죠.
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- 일본어: `nplurals=1; plural=0` - 규칙이 하나만 있음.
+- 영어: `nplurals=2; plural=(n != 1);` - 두 가지 규칙이 있음. N이 1이면 첫 번째, 그 외에는 두 번째 규칙 사용.
+- 브라질 포르투칼어: `nplurals=2; plural=(n > 1);` - 두 가지 규칙이 있음. N이 1보다 크면 두 번째 규칙 사용, 그 외에는 첫 번째 규칙 사용.
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+이제 복수형 규칙이 어떤 식으로 동작하는지 이해했으므로, [목록][plural] 중에서 적합한 규칙을 복사해서 사용하면 됩니다.
+혹시 좀더 자세한 설명을 보고 싶다면 [LingoHub 튜토리얼][lingohub_plurals]을 참고하세요.
 
-When calling out Gettext to do localization on sentences with counters, you will have to give him the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
+갯수를 포함한 문자열을 인자로 지정해서 Gettext 함수를 호출하는 코드에는 반드시
+그 갯수도 인자로 지정해야 합니다. 그러면 번역 문자열 들 중 그 수에 맞는 것을 잘 찾아서 사용하게 될 것입니다.
+그러기 위해서는 `.po` 파일에다 각 복수형 규칙에 해당하는 번역 문자열을 써두어야 합니다.
 
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but with the overall content instead; you will learn how to edit it easily later:
+### 구현 예시
+이론은 많이 보았으니, 간단히 실전을 경험해봅시다. `.po` 파일의 일부를 같이 봅시다. 파일 포맷은 자세히 보지 않아도 됩니다.
+대신 내용이 전반적으로 어떻게 되어 있는지를 보는 게 좋습니다. 이 파일을 편하게 수정하는 방법은 나중에 배우게 될 것입니다.
 
 {% highlight po %}
 msgid ""
@@ -174,16 +171,17 @@ msgstr[0] "Só uma mensagem não lida"
 msgstr[1] "%d mensagens não lidas"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
 plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it is
-advised not to use a complex language as the source of translation.
+빈 `msgid`와 `msgstr`이 있는 첫 부분은 파일 헤더처럼 동작합니다. 파일 인코딩과 함께
+복수형도 설정하고 있고, 그외에 크게 관련이 없는 것들이 기술되어 있습니다.
+두 번째 덩어리에서는 간단한 영어 문자열을 브라질 포르투칼어로 번역해 둔 것을 볼 수 있고,
+세 번째 덩어리는 두 번째 덩어리와 거의 같은데, [`sprintf`][sprintf]로 문자열 치환을 해서
+사용자 이름과 방문 날짜를 포함하게 될 것 같습니다.
+마지막 부분에서는 복수형을 다루는 예시를 볼 수 있습니다.
+영어로 단수형과 복수형에 해당하는 `msgid`가 있고, 그에 해당하는 번역이 `msgstr` 0과 1로
+번역되어 있습니다. 복수형에는 `%d` 로 문자열 치환을 사용해서 메시지 내에 숫자를 표시하게 되어 있습니다.
+복수형을 구분해서 표현하는 곳에는 항상 `msgid` 가 두 개(단수형과 복수형) 나타납니다. 그러므로
+번역의 원본이 되는 언어는 복잡하지 않은 언어를 사용하는 편이 좋습니다.
 
 ### Discussion on l10n keys
 As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used

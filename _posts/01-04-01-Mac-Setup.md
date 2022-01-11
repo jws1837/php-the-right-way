@@ -11,15 +11,27 @@ macOS에는 기본적으로 PHP 가 포함되어 있지만, 최신의 안정된 
 ### Homebrew를 사용하여 설치하기
 
 [Homebrew]는 macOS에서 PHP와 다양한 익스텐션을 쉽게 설치할 수 있도록 도와주는 패키지 관리자 도구입니다.
-Homebrew core 저장소는 PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4를 위한 "formulae"를 포함하고 있습니다. 아래 커맨드로 최신 버전을 설치하세요.
+Homebrew core 저장소는 PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0을 위한 "formulae"를 포함하고 있습니다. 아래 커맨드로 최신 버전을 설치하세요.
 
 ```
-brew install php@7.4
+brew install php@8.0
 ```
 
 `PATH`
 변수를 수정하면 Homebrew로 설치된 PHP 버전 간 전환을 할 수 있습니다. 이러한 과정이 번거롭다면,
 [brew-php-switcher][brew-php-switcher]를 사용하여 자동으로 버전을 변경할 수 있습니다.
+
+PHP 버전을 전환할 수 있는 또 다른 방법은 `unlink`, `link`로 원하는 버전으로 링크를 변경하는 방법입니다.
+
+```
+brew unlink php
+brew link --overwrite php@7.4
+```
+
+```
+brew unlink php
+brew link --overwrite php@8.0
+```
 
 ### Macports를 사용하여 설치하기
 
@@ -29,16 +41,17 @@ brew install php@7.4
 MacPorts는 미리 컴파일된 바이너리를 지원하여 의존성 패키지들을 설치할 때마다 매번 재컴파일하지 않아도 됩니다. 그래서
 시스템에 어떠한 패키지도 갖고 있지 않다면 굉장한 시간을 절약할 수 있습니다.
 
-`port install`이라는 커맨드를 이용하여 `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73`, `php74` 을 설치할 수 있습니다. 예를 들면:
+`port install`이라는 커맨드를 이용하여 `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php80` 을 설치할 수 있습니다. 아래처럼 말이죠.
 
-    sudo port install php56
     sudo port install php74
+    sudo port install php80
 
 그리고 `select` 커맨드를 이용하여 활성화된 PHP 버전을 변경할 수 있습니다.
 
-    sudo port select --set php php74
+    sudo port select --set php php80
 
 ### phpbrew를 사용하여 설치하기
+
 
 [phpbrew]는 여러가지 PHP버전을 설치하고 관리하기 위한 도구입니다. 두 개의 서로 다른 어플리케이션/프로젝트가 다른 버전의
 PHP를 요구하지만, 가상 머신은 사용하고 있지 않을때 매우 유용합니다.

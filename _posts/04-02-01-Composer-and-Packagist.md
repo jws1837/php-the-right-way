@@ -18,7 +18,7 @@ Composer를 다운로드 받는 가장 안전한 방법은 [공식 설명을 따
 이 방법은 인스톨러가 손상되거나 부정하게 변경되지는 않았는지 확인합니다.
 인스톨러는 `composer.phar`를 _현재 작업 디렉토리_ 에 설치합니다.
 
-Composer를 (/usr/local/bin 등에) *글로벌* 설치하기 권장하는데, 그렇게 하기 위해서는 다음 명령어를 추가로 실행합니다.
+Composer를 (/usr/local/bin 등에) *글로벌* 설치하기를 권장하니다. 그렇게 하기 위해서는 다음 명령어를 실행합니다.
 
 {% highlight console %}
 mv composer.phar /usr/local/bin/composer
@@ -26,7 +26,7 @@ mv composer.phar /usr/local/bin/composer
 
 **참고:** 권한때문에 실패한 경우 `sudo`를 붙여서 실행하세요.
 
-To run a locally installed Composer you'd use `php composer.phar`, globally it's simply `composer`.
+현재 작업 디렉토리에 설치한 Composer 를 실행하려면 `php composer.phar` 라고 하면 되고, 글로벌하게 설치한 것은 간단히 `composer` 하면 됩니다.
 
 #### 윈도우에 Composer 설치
 
@@ -84,8 +84,8 @@ require 'vendor/autoload.php';
 
 ### 의존 패키지들의 보안 이슈 확인하기
 
-[Security Advisories Checker]는 `composer.lock` 파일을 확인하여 여러분의 의존관계를 업데이트해야 하는지 알려주는
-웹 서비스와 커맨드라인 도구입니다.
+[Local PHP Security Checker]는 `composer.lock` 파일을 확인하여 의존관계를 업데이트해야 하는지 알려주는
+커맨드라인 도구입니다.
 
 ### Composer를 이용하여 전역 의존 패키지들 관리하기
 
@@ -110,7 +110,7 @@ composer global require phpunit/phpunit
 [Packagist]: https://packagist.org/
 [Twig]: https://twig.symfony.com/
 [libraries.io]: https://libraries.io/
-[Security Advisories Checker]: https://security.symfony.com/
+[Local PHP Security Checker]: https://github.com/fabpot/local-php-security-checker
 [Learn about Composer]: https://getcomposer.org/doc/00-intro.md
 [ComposerSetup]: https://getcomposer.org/Composer-Setup.exe
 [Composer Korean]: http://xpressengine.github.io/Composer-korean-docs/
