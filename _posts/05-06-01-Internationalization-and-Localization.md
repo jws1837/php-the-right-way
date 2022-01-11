@@ -183,40 +183,37 @@ plural forms and other things that are less relevant.
 복수형을 구분해서 표현하는 곳에는 항상 `msgid` 가 두 개(단수형과 복수형) 나타납니다. 그러므로
 번역의 원본이 되는 언어는 복잡하지 않은 언어를 사용하는 편이 좋습니다.
 
-### Discussion on l10n keys
-As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used
-throughout all your `.po` files, meaning other languages will have the same format and the same `msgid` fields but
-translated `msgstr` lines.
+### l10n 키에 관한 논의
+위에서 우리는 실제 영어 문자열을 메시지 ID로 사용했습니다. 그 `msgid` 는 프로젝트 내의 모든
+`.po` 파일에서 일관되게 사용이 되어야 합니다. 각 언어별 파일에서 `msgid` 는 똑같은 값을 사용하면서
+`msgstr` 만을 번역해서 사용하는 것이죠.
 
-Talking about translation keys, there are two main "schools" here:
+이 번역 키(`msgid`)를 바라보는 두 가지 관점이 있습니다.
 
-1. _`msgid` as a real sentence_.
-    The main advantages are:
-    - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some
-    meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French,
-    you might publish the new page with missing French sentences, and parts of the website would be displayed in English
-    instead;
-    - it is much easier for the translator to understand what's going on and do a proper translation based on the
-    `msgid`;
-    - it gives you "free" l10n for one language - the source one;
-    - The only disadvantage: if you need to change the actual text, you would need to replace the same `msgid`
-    across several language files.
+1. _사용되는 실제 문자열을 `msgid`로 사용_.
+    주된 장점:
+    - 특정 언어에서 일부 문자열의 번역이 누락된 경우 `msgid` 를 그대로 표시하게 되는데, 그런 상황에서도 어느 정도 의미가
+    전달됩니다. 즉, 여러분의 프로젝트가 주 언어는 영어이고 스페인어 번역도 해서 같이 제공은 할 수 있었지만
+    프랑스어 번역은 도움이 필요한 경우라면, 프랑스어 번역을 비워두어도 웹 사이트에 접속한 프랑스어 사용자는
+    영어로 사이트를 사용할 수 있는거죠.
+    - 번역자가 `msgid` 만 봐도 맥락을 충분히 파악해서 적절한 번역을 하는데에 도움이 됩니다.
+    - 주 언어 하나는 "공짜로" 지역화가 되는 효과가 있습니다.
+    - 딱 하나의 단점: 주 언어의 텍스트가 바뀌는 일이 생기면, 해당되는 `msgid` 를 모든 언어 파일에서 모두 찾아서 똑같이 바꿔야 합니다.
 
-2. _`msgid` as a unique, structured key_.
-It would describe the sentence role in the application in a structured way, including the template or part where the
-string is located instead of its content.
-    - it is a great way to have the code organized, separating the text content from the template logic.
-    - however, that could bring problems to the translator that would miss the context. A source language file would be
-    needed as a basis for other translations. Example: the developer would ideally have an `en.po` file, that
-    translators would read to understand what to write in `fr.po` for instance.
-    - missing translations would display meaningless keys on screen (`top_menu.welcome` instead of `Hello there, User!`
-    on the said untranslated French page). That is good it as would force translation to be complete before publishing -
-    however, bad as translation issues would be remarkably awful in the interface. Some libraries, though, include an
-    option to specify a given language as "fallback", having a similar behavior as the other approach.
+2. _구조화 된 유일한 키값을 `msgid`로 사용_.
+`msgid` 에 문자열의 내용을 넣는 것이 아니라, 그 문자열이 어플리케이션에서 사용되는 위치와 역할을 구조화된 방법으로 표현하는 것입니다.
+    - 텍스트 내용과 템플릿 로직을 분리함으로써, 코드를 정돈할 수 있는 좋은 방법입니다.
+    - 그러나, 번역자가 맥락을 파악하기 힘들어지는 문제가 있습니다. 특정 언어 번역을 위해서는
+    반드시 주 언어 파일을 기초로 작업해야 합니다. 즉, 번역자들이 `fr.po` 에 프랑스어 번역을 작성하기 위해서는
+    `en.po` 파일을 보면서 작업해야 합니다.
+    - 번역이 누락된 문자열은 의미없는 키 값으로 표시됩니다. (`Hello there, User!` 대신 `top_menu.welcome` 이 표시되는 거죠.)
+    최종 릴리스가 되기 전에 모든 문자열의 번역이 강제된다는 점에서는 좋을 수도 있지만,
+    실수로 번역을 빠뜨리면 끔직한 화면이 노출되는 문제가 있죠. 어떤 라이브러리들은 "기본(fallback)" 언어를
+    지정하는 기능을 제공하기도 합니다. 그러면 1번 방법과 같은 효과가 납니다.
 
-The [Gettext manual][manual] favors the first approach as, in general, it is easier for translators and users in
-case of trouble. That is how we will be working here as well. However, the [Symfony documentation][symfony-keys] favors
-keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+[Gettext 설명서][manual] 는 1번 방법을 권하는데, 번역자가 작업하거나 문제가 생겼을 때 대처하기가 쉽다는
+이유 때문입니다. 이 문서에서 우리는 이 방법을 따를 겁니다. 반면 [Symfony 문서][symfony-keys]는 
+2번 방법을 권합니다. 템플릿에는 전혀 영향을 주지 않으면서 번역에만 독립적으로 변화를 줄 수 있는 장점이 있다는 이유죠.
 
 ### Everyday usage
 In a typical application, you would use some Gettext functions while writing static text in your pages. Those sentences
