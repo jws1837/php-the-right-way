@@ -215,17 +215,17 @@ plural forms and other things that are less relevant.
 이유 때문입니다. 이 문서에서 우리는 이 방법을 따를 겁니다. 반면 [Symfony 문서][symfony-keys]는 
 2번 방법을 권합니다. 템플릿에는 전혀 영향을 주지 않으면서 번역에만 독립적으로 변화를 줄 수 있는 장점이 있다는 이유죠.
 
-### Everyday usage
-In a typical application, you would use some Gettext functions while writing static text in your pages. Those sentences
-would then appear in `.po` files, get translated, compiled into `.mo` files and then, used by Gettext when rendering
-the actual interface. Given that, let's tie together what we have discussed so far in a step-by-step example:
+### 일상적인 사용법
+일반적인 어플리케이션에서는 아마 웹페이지 내에서 정적인 텍스트를 넣을 때 Gettext 함수를 사용할 것입니다.
+그런 텍스트들을 모아서 `.po` 파일을 만들어내고, 그것을 번역한 뒤 컴파일해서 `.mo` 파일을 만들면, 실제 사용자 인터페이스가 그려질 때
+Gettext 가 그 파일을 읽어서 텍스트를 출력하게 될 것입니다. 지금까지 이야기했던 내용을 모아서 단계별 예제를 진행해봅시다.
 
-#### 1. A sample template file, including some different gettext calls
+#### 1. gettext 함수를 호출하는 몇 가지 방법을 보여주는 템플릿 파일 예제
 {% highlight php %}
 <?php include 'i18n_setup.php' ?>
 <div id="header">
     <h1><?=sprintf(gettext('Welcome, %s!'), $name)?></h1>
-    <!-- code indented this way only for legibility -->
+    <!-- 가독성을 높이기 위해서 아래처럼 작성했습니다. -->
     <?php if ($unread): ?>
         <h2><?=sprintf(
             ngettext('Only one unread message',
@@ -240,17 +240,17 @@ the actual interface. Given that, let's tie together what we have discussed so f
 <p><?=gettext('We\'re now translating some strings')?></p>
 {% endhighlight %}
 
-- [`gettext()`][func] simply translates a `msgid` into its corresponding `msgstr` for a given language. There's also
-the shorthand function `_()` that works the same way;
-- [`ngettext()`][n_func] does the same but with plural rules;
-- there's also [`dgettext()`][d_func] and [`dngettext()`][dn_func], that allows you to override the domain for a single
-call. More on domain configuration in the next example.
+- [`gettext()`][func] 함수는 주어진 언어에 맞게 `msgid`를 `msgstr`로 번역해줍니다. `_()` 라고 짧게
+써도 됩니다.
+- [`ngettext()`][n_func] 같은 동작을 하지만 복수형 규칙을 사용하는 함수입니다.
+- 그 외에 [`dgettext()`][d_func] 와 [`dngettext()`][dn_func] 함수가 있는데, 명시적으로 도메인을 지정할 수 있는 함수입니다.
+다음 예제에서 도메인에 대해 다룰 겁니다.
 
-#### 2. A sample setup file (`i18n_setup.php` as used above), selecting the correct locale and configuring Gettext
+#### 2. 알맞은 로케일과 Gettext 설정을 선택하는 예제 (앞선 예제에서 본 `i18n_setup.php` 같은 파일)
 {% highlight php %}
 <?php
 /**
- * Verifies if the given $locale is supported in the project
+ * 주어진 $locale 이 이 프로젝트에서 지원되는 것인지 검증합니다.
  * @param string $locale
  * @return bool
  */
@@ -258,18 +258,18 @@ function valid($locale) {
    return in_array($locale, ['en_US', 'en', 'pt_BR', 'pt', 'es_ES', 'es']);
 }
 
-//setting the source/default locale, for informational purposes
+//정보 제공을 위해 기본 로케일 설정
 $lang = 'en_US';
 
 if (isset($_GET['lang']) && valid($_GET['lang'])) {
-    // the locale can be changed through the query-string
-    $lang = $_GET['lang'];    //you should sanitize this!
-    setcookie('lang', $lang); //it's stored in a cookie so it can be reused
+    // 쿼리스트링을 이용해서 로케일을 변경할 수 있음.
+    $lang = $_GET['lang'];    //실제 제품 코드에선 입력값이 안전한지 반드시 검증해야 합니다!
+    setcookie('lang', $lang); //쿠키에 저장했으므로 다른 곳에서 재사용할 수 있습니다.
 } elseif (isset($_COOKIE['lang']) && valid($_COOKIE['lang'])) {
-    // if the cookie is present instead, let's just keep it
-    $lang = $_COOKIE['lang']; //you should sanitize this!
+    // 쿠키에 이미 들어있는 값을 유지해서 사용합니다.
+    $lang = $_COOKIE['lang']; //쿠키에 저장된 값도 안전한 입력값인지 반드시 검증 후 사용해야 합니다!
 } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    // default: look for the languages the browser says the user accepts
+    // 기본값: 사용자 웹 브라우저에 설정된 언어를 찾습니다.
     $langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
     array_walk($langs, function (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
     foreach ($langs as $browser_lang) {
@@ -280,26 +280,26 @@ if (isset($_GET['lang']) && valid($_GET['lang'])) {
     }
 }
 
-// here we define the global system locale given the found language
+// 앞 단계에서 결정한 로케일을 어플리케이션 전역 로케일로 설정합니다.
 putenv("LANG=$lang");
 
-// this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
+// 이렇게 해 두면 날짜 함수(LC_TIME)나 통화 포매팅(LC_MONETARY) 등의 작업에 도움이 될 것 같습니다.
 setlocale(LC_ALL, $lang);
 
-// this will make Gettext look for ../locales/<lang>/LC_MESSAGES/main.mo
+// Gettext 가 ../locales/<lang>/LC_MESSAGES/main.mo 를 사용하도록 합니다.
 bindtextdomain('main', '../locales');
 
-// indicates in what encoding the file should be read
+// 파일 인코딩을 지정해줍니다.
 bind_textdomain_codeset('main', 'UTF-8');
 
-// if your application has additional domains, as cited before, you should bind them here as well
+// 어플리케이션에 다른 도메인이 더 있으면 여기서 꼭 바인딩 해줘야 합니다.
 bindtextdomain('forum', '../locales');
 bind_textdomain_codeset('forum', 'UTF-8');
 
-// here we indicate the default domain the gettext() calls will respond to
+// 어플리케이션에서 사용할 기본 도메인을 설정합니다.
 textdomain('main');
 
-// this would look for the string in forum.mo instead of main.mo
+// 이렇게 쓰면 main.mo 대신 forum.mo 를 사용해서 번역 문자열을 표시할 것입니다.
 // echo dgettext('forum', 'Welcome back!');
 ?>
 {% endhighlight %}
