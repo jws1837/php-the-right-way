@@ -304,23 +304,22 @@ textdomain('main');
 ?>
 {% endhighlight %}
 
-#### 3. Preparing translation for the first run
-One of the great advantages Gettext has over custom framework i18n packages is its extensive and powerful file format.
-"Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!" Make no mistake,
-applications like [Poedit] are here to help - _a lot_. You can get the program from [their website][poedit_download],
-it’s free and available for all platforms. It’s a pretty easy tool to get used to, and a very powerful one at the same
-time - using all features Gettext has available. This guide is based on PoEdit 1.8.
+#### 3. 첫 번째 실행을 위한 번역 준비하기
+Gettext가 커스텀 프레임워크 i18n 패키지에 비해 가지고 있는 가장 큰 장점은 광범위하고 강력한 파일 형식입니다.
+"오, 그건 너무 이해하기도 어렵고 편집하기도 어려워요. 단순한 배열을 사용하는게 더 좋아요!" 하는 실수는 하지 않도록 합시다.
+[Poedit] 같은 프로그램들이 도와줄거니까요. 그럿도 _아주많이_ 말이죠. [Poedit 웹사이트][poedit_download]에서 받을 수 있고,
+무료이기도 하고 모든 플랫폼에서 사용할 수 있는 프로그램입니다. 배우기에 어렵지는 않으면서도 강력하기까지 한 도구라고 할 수 있습니다. 
+Gettext 의 모든 기능을 사용할 수 있거든요. 이 가이드에서는 PoEdit 1.8  을 사용할 겁니다. 
 
-In the first run, you should select “File > New...” from the menu. You’ll be asked straight ahead for the language:
-here you can select/filter the language you want to translate to, or use that format we mentioned before, such as
-`en_US` or `pt_BR`.
+처음 실행한 뒤 메뉴에서 "File > New..." 를 누르세요. 그러면 언어 선택 단계로 넘어갈텐데,
+번역하고 싶은 언어를 검색해서 고를 수 있고, 앞에서 이야기했던 `en_US`나 `pt_BR` 같은
+로케일 코드를 입력해서 언어를 결정할 수도 있습니다.
 
-Now, save the file - using that directory structure we mentioned as well. Then you should click “Extract from sources”,
-and here you’ll configure various settings for the extraction and translation tasks. You’ll be able to find all those
-later through “Catalog > Properties”:
+이제 파일을 저장하면 되는데 앞에서 봤던 디렉토리 구조에 맞게 저장을 하세요. 그리고나서 "소스에서 추출하기 Extract from source"를 눌러야 합니다.
+이 단계에서 다양한 추출 설정과 번역 설정을 합니다. 나중에 "Catalog > Properties" 에서 그 설정을 확인할 수 있습니다.
 
-- Source paths: here you must include all folders from the project where `gettext()` (and siblings) are called - this
-is usually your templates/views folder(s). This is the only mandatory setting;
+- 소스 경로: 여러분의 프로젝트에서 `gettext()` 함수와 그 친구들을 호출하는 파일들이 모두 포함되어 있는 폴더를 소스 경로로 설정해야 합니다.
+보통은 프로젝트의 템플릿/뷰 폴더일 것입니다. 꼭 필요한 설정은 이것 하나입니다.
 - Translation properties:
     - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
     - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
