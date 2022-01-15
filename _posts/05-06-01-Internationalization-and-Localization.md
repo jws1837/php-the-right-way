@@ -320,21 +320,19 @@ Gettext 의 모든 기능을 사용할 수 있거든요. 이 가이드에서는 
 
 - 소스 경로: 여러분의 프로젝트에서 `gettext()` 함수와 그 친구들을 호출하는 파일들이 모두 포함되어 있는 폴더를 소스 경로로 설정해야 합니다.
 보통은 프로젝트의 템플릿/뷰 폴더일 것입니다. 꼭 필요한 설정은 이것 하나입니다.
-- Translation properties:
-    - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
-    - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
-    leave it with the default option most of the time, as PoEdit already includes a handy database of plural rules for
-    many languages.
-    - Charsets: UTF-8, preferably;
-    - Source code charset: set here the charset used by your codebase - probably UTF-8 as well, right?
-- Source keywords: The underlying software knows how `gettext()` and similar function calls look like in several
-programming languages, but you might as well create your own translation functions. It will be here you’ll add those
-other methods. This will be discussed later in the “Tips” section.
+- 번역 설정:
+    - 프로젝트 이름과 버전, 팀 이름과 메일 주소: .po 파일 헤더 부분에 넣으면 유용한 내용입니다.
+    - 복수형: 앞서 이야기했던 복수형에 대한 내용을 설정합니다. PoEdit가 언어별 복수형 데이터베이스를 가지고 있어서 보통은 기본값으로 두어도 괜찮습니다.
+    - 문자셋: UTF-8 을 권장합니다.
+    - 소스코드 문자셋: 프로젝트 소스코드의 문자셋을 설정합니다. 아마 요즘은 모두 UTF-8을 사용하고 있을 것입니다. (혹시 설마...?)
+- 소스 키워드: Gettext 도구들이 이미 프로그래밍 언어별로 어떻게 `gettext()` 관련 함수들이
+호출되는지 알고 있지만, 원하는 함수를 직접 만들 수도 있습니다. 여기에 그런 함수를 설정하면 됩니다.
+나중에 "팁" 섹션에서 다뤄보겠습니다. 
 
-After setting those points it will run a scan through your source files to find all the localization calls. After every
-scan PoEdit will display a summary of what was found and what was removed from the source files. New entries will fed
-empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a .mo
-file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
+설정을 하고 나면 소스파일을 모두 스캔해서 지역화 함수 호출을 모두 찾아낼 겁니다.
+스캔을 실행할 때마다 어떤 변화를 발견했는지 실행 결과를 보여줄 것입니다. 
+새로 추가된 문자열은 번역 테이블에 빈 값으로 추가됩니다. 번역이 필요한 곳에 번역된 내용을 작성하고
+저장하면 .mo 이 컴파일되어서 생성(혹은 업데이트)됩니다. 짜잔~ 국제화된 프로젝트가 나왔습니다~ 
 
 #### 4. Translating strings
 As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
