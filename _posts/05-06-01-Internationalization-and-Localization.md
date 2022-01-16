@@ -334,24 +334,23 @@ Gettext 의 모든 기능을 사용할 수 있거든요. 이 가이드에서는 
 새로 추가된 문자열은 번역 테이블에 빈 값으로 추가됩니다. 번역이 필요한 곳에 번역된 내용을 작성하고
 저장하면 .mo 이 컴파일되어서 생성(혹은 업데이트)됩니다. 짜잔~ 국제화된 프로젝트가 나왔습니다~ 
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
-forms. The first ones have simply two boxes: source and localized string. The source string cannot be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+#### 4. 문자열 번역하기
+앞서 살펴본 것처럼 지역화된 문자열은 단순한 종류와 복수형이 있는 종류 두 가지가 있습니다.
+첫 번째 것은 원본 문자열과 지역화된 문자열 박스 두 개만 표시됩니다. 원본 문자열은
+수정할 수 없게 되어 있습니다. 그건 소스 파일을 수정해야 하는 일이기 때문입니다. 변경이 필요하면 소스 파일 수정 후
+다시 스캔해야 합니다. (팁: 번역 줄을 오른쪽 클릭하면 소스 파일과 문자열이 사용되는 위치를 알려줍니다.)
+두 번째의 복수형이 있는 문자열은 두 개의 원본 문자열을 보여주는 박스와 각 복수형 문자열을 설정할 수 있는 
+탭들이 표시됩니다.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, appearing golden in the list. It is also useful if you have a translation team and someone
-tries to write something they are not sure about: just mark Fuzzy, and someone else will review later.
+소스 파일을 수정해서 번역도 업데이트할 필요가 있을 때에는 단순히 "새로고침"을 하면 됩니다. Poedit이 코드를
+변경된 내용을 반영해줍니다. 다른 사람들이 이미 해놓은 번역에 기초해서 번역을 유추해주기도 합니다.
+이렇게 유추된 항목에는 "퍼지" 표지가 붙습니다. 목록에서 금색으로 표시되는 이런 항목은 리뷰가 필요하다는
+것을 나타냅니다. 그래서 프로젝트의 번역팀에서 번역을 하다가 조금 애매한 부분이 있어 다른 사람의 리뷰가 필요한 경우에도
+퍼지 표지를 붙여두는 식으로 활용할 수 있습니다. 그러면 나중에 누군가 리뷰를 해주겠죠.
 
-Finally, it is advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+"보기 > 번역되지 않은 항목 먼저 (View > Untranslated entries first)"는 체크된 상태로 두는 게 좋습니다. 번역을
+놓치는 항목이 생기지 않게 _상당히_ 도와줄 겁니다. 필요하다면 그 메뉴에서 번역자들을 위해서 도움이 되는 정보를
+기록하는 기능을 사용할 수도 있습니다.
 
 ### Tips & Tricks
 
