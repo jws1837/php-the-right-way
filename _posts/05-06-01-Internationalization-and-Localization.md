@@ -320,72 +320,69 @@ Gettext 의 모든 기능을 사용할 수 있거든요. 이 가이드에서는 
 
 - 소스 경로: 여러분의 프로젝트에서 `gettext()` 함수와 그 친구들을 호출하는 파일들이 모두 포함되어 있는 폴더를 소스 경로로 설정해야 합니다.
 보통은 프로젝트의 템플릿/뷰 폴더일 것입니다. 꼭 필요한 설정은 이것 하나입니다.
-- Translation properties:
-    - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
-    - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
-    leave it with the default option most of the time, as PoEdit already includes a handy database of plural rules for
-    many languages.
-    - Charsets: UTF-8, preferably;
-    - Source code charset: set here the charset used by your codebase - probably UTF-8 as well, right?
-- Source keywords: The underlying software knows how `gettext()` and similar function calls look like in several
-programming languages, but you might as well create your own translation functions. It will be here you’ll add those
-other methods. This will be discussed later in the “Tips” section.
+- 번역 설정:
+    - 프로젝트 이름과 버전, 팀 이름과 메일 주소: .po 파일 헤더 부분에 넣으면 유용한 내용입니다.
+    - 복수형: 앞서 이야기했던 복수형에 대한 내용을 설정합니다. PoEdit가 언어별 복수형 데이터베이스를 가지고 있어서 보통은 기본값으로 두어도 괜찮습니다.
+    - 문자셋: UTF-8 을 권장합니다.
+    - 소스코드 문자셋: 프로젝트 소스코드의 문자셋을 설정합니다. 아마 요즘은 모두 UTF-8을 사용하고 있을 것입니다. (혹시 설마...?)
+- 소스 키워드: Gettext 도구들이 이미 프로그래밍 언어별로 어떻게 `gettext()` 관련 함수들이
+호출되는지 알고 있지만, 원하는 함수를 직접 만들 수도 있습니다. 여기에 그런 함수를 설정하면 됩니다.
+나중에 "팁" 섹션에서 다뤄보겠습니다. 
 
-After setting those points it will run a scan through your source files to find all the localization calls. After every
-scan PoEdit will display a summary of what was found and what was removed from the source files. New entries will fed
-empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a .mo
-file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
+설정을 하고 나면 소스파일을 모두 스캔해서 지역화 함수 호출을 모두 찾아낼 겁니다.
+스캔을 실행할 때마다 어떤 변화를 발견했는지 실행 결과를 보여줄 것입니다. 
+새로 추가된 문자열은 번역 테이블에 빈 값으로 추가됩니다. 번역이 필요한 곳에 번역된 내용을 작성하고
+저장하면 .mo 이 컴파일되어서 생성(혹은 업데이트)됩니다. 짜잔~ 국제화된 프로젝트가 나왔습니다~ 
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
-forms. The first ones have simply two boxes: source and localized string. The source string cannot be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+#### 4. 문자열 번역하기
+앞서 살펴본 것처럼 지역화된 문자열은 단순한 종류와 복수형이 있는 종류 두 가지가 있습니다.
+첫 번째 것은 원본 문자열과 지역화된 문자열 박스 두 개만 표시됩니다. 원본 문자열은
+수정할 수 없게 되어 있습니다. 그건 소스 파일을 수정해야 하는 일이기 때문입니다. 변경이 필요하면 소스 파일 수정 후
+다시 스캔해야 합니다. (팁: 번역 줄을 오른쪽 클릭하면 소스 파일과 문자열이 사용되는 위치를 알려줍니다.)
+두 번째의 복수형이 있는 문자열은 두 개의 원본 문자열을 보여주는 박스와 각 복수형 문자열을 설정할 수 있는 
+탭들이 표시됩니다.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, appearing golden in the list. It is also useful if you have a translation team and someone
-tries to write something they are not sure about: just mark Fuzzy, and someone else will review later.
+소스 파일을 수정해서 번역도 업데이트할 필요가 있을 때에는 단순히 "새로고침"을 하면 됩니다. Poedit이 코드를
+변경된 내용을 반영해줍니다. 다른 사람들이 이미 해놓은 번역에 기초해서 번역을 유추해주기도 합니다.
+이렇게 유추된 항목에는 "퍼지" 표지가 붙습니다. 목록에서 금색으로 표시되는 이런 항목은 리뷰가 필요하다는
+것을 나타냅니다. 그래서 프로젝트의 번역팀에서 번역을 하다가 조금 애매한 부분이 있어 다른 사람의 리뷰가 필요한 경우에도
+퍼지 표지를 붙여두는 식으로 활용할 수 있습니다. 그러면 나중에 누군가 리뷰를 해주겠죠.
 
-Finally, it is advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+"보기 > 번역되지 않은 항목 먼저 (View > Untranslated entries first)"는 체크된 상태로 두는 게 좋습니다. 번역을
+놓치는 항목이 생기지 않게 _상당히_ 도와줄 겁니다. 필요하다면 그 메뉴에서 번역자들을 위해서 도움이 되는 정보를
+기록하는 기능을 사용할 수도 있습니다.
 
-### Tips & Tricks
+### 팁과 트릭
 
-#### Possible caching issues
-If you are running PHP as a module on Apache (`mod_php`), you might face issues with the `.mo` file being cached. It
-happens the first time it is read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it
-usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+#### 캐싱 관련 문제
+Apache 웹서버 모듈(`mod_php`)로 PHP가 동작할 때 `.mo` 파일이 캐시되어서 생기는 문제를 경험할 수도 있습니다.
+캐시된 파일을 갱신하려면 웹서버를 재시작 해야할 수도 있습니다. Nginx에서 PHP5 를 사용할 때에는 몇 번 페이지를 새로고침하면
+보통은 캐시된 번역이 갱신되는 편이고, PHP7 을 사용하면 거의 경험할 수 없을 것입니다.
 
-#### Additional helper functions
-As preferred by many people, it is easier to use `_()` instead of `gettext()`. Many custom i18n libraries from
-frameworks use something similar to `t()` as well, to make translated code shorter. However, that is the only function
-that sports a shortcut. You might want to add in your project some others, such as `__()` or `_n()` for `ngettext()`,
-or maybe a fancy `_r()` that would join `gettext()` and `sprintf()` calls. Other libraries, such as
-[oscarotero's Gettext][oscarotero] also provide helper functions like these.
+#### 헬퍼 함수 추가하기
+`gettext()` 보다 짧게 `_()` 라고 쓰는 게 쉬워서 많은 사람들이 헬퍼 함수를 선호합니다. 커스텀 i18n 라이브러리들도
+`t()` 같은 비슷한 헬퍼 함수를 제공합니다. 하지만 보통은 그거 하나뿐입니다.
+`ngettext()`를  `__()`나 `_n()`로 줄여서 쓰거나, `gettext()`와 `sprintf()` 호출을 엮어서 멋지게 `_r()`로
+쓰고 싶다는 생각이 들 수 있습니다. [oscarotero's Gettext][oscarotero] 같은 라이브러리가
+그런 헬퍼 함수를 제공합니다.
 
-In those cases, you'll need to instruct the Gettext utility on how to extract the strings from those new functions.
-Don't be afraid; it is very easy. It is just a field in the `.po` file, or a Settings screen on Poedit. In the editor,
-that option is inside "Catalog > Properties > Source keywords". Remember: Gettext already knows the default functions
-for many languages, so don’t be afraid if that list seems empty. You need to include there the specifications of those
-new functions, following [a specific format][func_format]:
+Gettext 도구가 그런 새로운 함수 호출 구문에서 문자열을 어떻게 추출할지 가르쳐 주기만 하면 헬퍼 함수를 추가할 수 있습니다.
+어렵지 않게 할 수 있는 일입니다. `.po` 파일의 필드 하나일 뿐이고, Poedit 의 설정 화면에서도 설정할 수 있습니다.
+Poedit의 "Catalog > Properties > Source keywords" 를 통해서 설정할 수 있습니다. 설정이 비어있어도 Gettext가
+이미 여러 프로그래밍 언어의 기본 패턴을 내장하고 있어서 괜찮습니다. 정의하고 싶은 새로운 함수만 
+[정해진 형식][func_format]에 따라 잘 추가해주면 됩니다.
 
-- if you create something like `t()` that simply returns the translation for a string, you can specify it as `t`.
-Gettext will know the only function argument is the string to be translated;
-- if the function has more than one argument, you can specify in which one the first string is - and if needed, the
-plural form as well. For instance, if we call our function like this: `__('one user', '%d users', $number)`, the
-specification would be `__:1,2`, meaning the first form is the first argument, and the second form is the second
-argument. If your number comes as the first argument instead, the spec would be `__:2,3`, indicating the first form is
-the second argument, and so on.
+- `t()` 같이 문자열 하나를 받아서 번역된 문자열을 리턴하는 함수를 만드는 경우에는 `t` 라고만 써주면
+인자 하나를 받는 함수라는 것을 Gettext 가 인식해서 처리해줍니다.
+- 인자가 여러 개인 함수는 각각이 어떤 용도인지 지정할 수 있습니다.
+예를 들어 `__('one user', '%d users', $number)` 이렇게 사용하는 함수라면
+`__:1,2` 라고 정의할 수 있습니다. 복수형의 첫 번째 형식은 첫 번째 인자이고 두 번째 형식은 두 번째 인자라는 의미입니다.
+다르게 숫자(`$number`)를 첫 번째 인자로 사용하는 함수를 만든다면 `__:2,3` 이라고 정의하면 됩니다. 두 번째 인자가
+복수형의 첫 번째 형식이라는 의미입니다.
 
-After including those new rules in the `.po` file, a new scan will bring in your new strings just as easy as before.
+`.po` 파일에 새 헬퍼 함수 규칙을 추가한 뒤에 스캔을 한 번 하면 이전과 같이 쉽게 번역 문자열을 찾아줄 것입니다.
 
-### References
+### 참고자료
 
 * [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 * [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
