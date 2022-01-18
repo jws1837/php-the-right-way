@@ -21,6 +21,7 @@ opcode 캐시는 아마 여러분의 어플리케이션을 상당히 빠르게 �
 * [XCache]
 * [WinCache] (MS Windows Server를 위한 익스텐션)
 * [위키백과: PHP 가속화도구(Acceleratior) 목록][PHP_accelerators]
+* [PHP Preloading] - PHP >= 7.4
 
 
 [opcache-book]: https://secure.php.net/book.opcache
@@ -29,3 +30,4 @@ opcode 캐시는 아마 여러분의 어플리케이션을 상당히 빠르게 �
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: https://www.iis.net/downloads/microsoft/wincache-extension
 [PHP_accelerators]: https://wikipedia.org/wiki/List_of_PHP_accelerators
+[PHP Preloading]: https://www.php.net/opcache.preloading
