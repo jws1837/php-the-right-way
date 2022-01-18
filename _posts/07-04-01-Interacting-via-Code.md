@@ -97,9 +97,4 @@ class FooModel
 프리젠테이션을 모든 경우에 반드시 분리해야만 하는 것은 아니지만, 그 둘을 서로 많이 섞을수록 점점 문제가 발생하게 될
 것입니다. 특히 [유닛 테스트](#unit-testing)를 하려는 경우에는 더 심각할 것입니다.
 
-[PHPBridge]에는 비슷한 주제를 다룬 [Creating a Data Class]라는 훌륭한 자료가 있습니다. 이제 막 데이터베이스를 사용하는
-개발을 하기 시작한 개발자들에게는 반드시 도움이 될 좋은 자료 입니다.
-
 [MVC]: https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
-[PHPBridge]: https://phpbridge.org/docs/
-[Creating a Data Class]: https://phpbridge.org/intro-to-php/creating_a_data_class
