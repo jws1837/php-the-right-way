@@ -25,10 +25,10 @@ anchor:  user_groups
 [Modern PUG(모던퍼그, Modern PHP User Group)][modernpug-ko]
 
 [google]: https://www.google.com/search?q=php+user+group+near+me
-[meetup]: http://www.meetup.com/find/
+[meetup]: https://www.meetup.com/find/
 [php-ug]: https://php.ug/
 [NomadPHP]: https://nomadphp.com/
-[PHPWomen]: http://phpwomen.org/
+[PHPWomen]: https://twitter.com/PHPWomen
 [php-wiki]: https://wiki.php.net/usergroups
 [php-uglist]: http://php.net/ug.php
 [modernpug-ko]: http://www.modernpug.org
