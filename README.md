@@ -14,7 +14,7 @@
 _PHP: The Right Way_ 는 당신의 웹사이트에 사용할 수 있는 웹 배너 이미지들을 갖고 있습니다. 당신이 지지하고 있음을 보여주세요,
 그리고 새 PHP 개발자들이 어디에서 좋은 정보를 찾을 수 있는지 알려주세요.
 
-[배너 이미지 보기](http://www.phptherightway.com/banners.html)
+[배너 이미지 보기](https://www.phptherightway.com/banners.html)
 
 ## 공헌하는 방법
 
