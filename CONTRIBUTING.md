@@ -74,7 +74,7 @@
 
 5. 논리적인 단위로 여러분의 수정 내용을 commit 합니다. [git commit
    message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)에 따라 메시지를 적절히 작성합니다. 여러분의 커밋을 공개하기 전에, 
-   git의 [interactive rebase](https://help.github.com/articles/interactive-rebase) 기능을 사용해서 커밋을 깔끔하게 정리합니다.
+   git의 [interactive rebase](https://help.github.com/articles/about-git-rebase) 기능을 사용해서 커밋을 깔끔하게 정리합니다.
 
 6. 로컬 저장소에서 upstream 개발 브랜치를 여러분의 토픽 브랜치로 merge(혹은 rebase)합니다.
 
@@ -113,8 +113,8 @@
 2. 스페이스 네 개를 사용하여 들여쓰기를 합니다. 탭을 사용하여 들여쓰기 하지 마십시오.
 3. 한 줄 너비는 120글자로 합니다. (역주 : 한국어판의 경우 한 줄 너비를 60자로 쓰려고 합니다.)
 4. 예제 코드는 PSR-1 이나 그 이상 버전을 준수해야 합니다.
-5. 내용은 [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) 문서 형식으로 작성합니다.
-6. Use language agnostic urls when refering to external websites such as the [php.net](http://php.net/urlhowto.php) manual
+5. 내용은 [GitHub Flavored Markdown](https://github.github.com/gfm/) 문서 형식으로 작성합니다.
+6. [php.net](http://php.net/urlhowto.php) 매뉴얼 같은 외부 사이트 링크를 걸 때에는 가급적 언어 중립적인 주소를 사용합니다.
 
 ## 외부 링크 컨텐트 번역 규칙
 

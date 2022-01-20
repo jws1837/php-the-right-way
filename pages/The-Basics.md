@@ -406,21 +406,3 @@ return ($a != 3 && $b != 4) || $c == 5;
 PHP 5.3부터 삼항 연사자의 중간 부분을 생략 가능합니다.
 "expr1 ?: expre3" 표현식은 expr1이 TRUE로 평가되는 경우 expr1을 리턴하고, 아닌 경우에 expr3을 리턴합니다.
 * [삼항 연산자](http://php.net/language.operators.comparison)
-
-## 변수 선언 {#variable-declarations}
-
-때때로 프로그래머들은 변수를 정의함으로써 코드를 좀 더 "깔끔하게" 유지하려고 합니다. 그런데 변수를 정의하는 경우, PHP
-스크립트에서는 메모리를 두 배 사용하게 하는 결과를 불러오기도 합니다. 아래 예제에서 텍스트가 1MB 정도의 데이터를
-포함하고 있다고 한다면 변수에 데이터를 복사함으로써 2MB의 메모리를 사용하게 됩니다.
-
-{% highlight php %}
-<?php
-$about = 'A very long string of text';    // uses 2MB memory
-echo $about;
-
-// vs
-
-echo 'A very long string of text';        // uses 1MB memory
-{% endhighlight %}
-
-* [성능 팁](http://web.archive.org/web/20140625191431/https://developers.google.com/speed/articles/optimizing-php)
