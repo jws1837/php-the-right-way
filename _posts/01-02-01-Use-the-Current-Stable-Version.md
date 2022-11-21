@@ -10,8 +10,8 @@ anchor:  use_the_current_stable_version
 [새로운 기능](#language_highlights)이 많이 추가되었습니다. 엔진이 대부분 재작성되어 이전 버전들보다 훨씬 빠릅니다. PHP 8 은
 많은 새 기능과 성능 향상이 포함되어 있는 메이저 업데이트입니다.
 
-PHP 5.6 버전은 [이미 지원되지 않기때문에](http://php.net/supported-versions.php), 최신 안정버전으로 빨리 업그레이드하는 것이 좋습니다.
-[하위 호환성 문제][php-bc]가 많지는 않기때문에 업그레이드는 간단합니다. 어떤 버전에 함수나 기능이 추가되었는지 잘 모르겠다면 
+You should try to upgrade to the latest stable version quickly - PHP 7.4 [is already End of Life](http://php.net/supported-versions.php). Upgrading is easy, as there are not many [backwards compatibility breaks][php-bc]. If you are not sure which version a function or feature is in, you can check the PHP documentation on the [php.net][php-docs] website.
+최신 안정 버전으로 빠르게 업그레이드 하는게 좋습니다. - PHP 7.4 는 [이미 수명을 다했습니다](http://php.net/supported-versions.php). [하위 호환성 문제][php-bc]가 많지는 않기때문에 업그레이드는 간단합니다. 어떤 버전에 함수나 기능이 추가되었는지 잘 모르겠다면
 [php.net][php-docs] 웹사이트에서 PHP 문서를 확인할 수 있습니다.
 
 [php-release]: http://php.net/downloads.php

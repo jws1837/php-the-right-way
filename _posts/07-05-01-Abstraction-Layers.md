@@ -18,6 +18,7 @@ anchor:  databases_abstraction_layers
 * [Atlas][5]
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
+* [Medoo][8]
 * [Propel][7]
 * [Zend-db][4]
 
@@ -28,5 +29,6 @@ anchor:  databases_abstraction_layers
 [5]: https://atlasphp.io
 [6]: https://github.com/auraphp/Aura.Sql
 [7]: http://propelorm.org/
+[8]: https://medoo.in/
 [psr0]: https://www.php-fig.org/psr/psr-0/
 [psr4]: https://www.php-fig.org/psr/psr-4/

@@ -47,7 +47,7 @@ Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이�
 그리고 `.mo/.po` 같은 다른 파일 포맷으로 내보내기도 할 수 있습니다.
 - [symfony/translation][symfony]: 많은 종류의 파일 포맷을 지원하지만 조금 장황한 XLIFF 포맷을 권장합니다.
 헬퍼 함수나 내장 메시지 추출기 등을 포함하고 있지는 않지만 `strtr()`을 이용한 플레이스홀더를 지원합니다.
-- [zend/i18n][zend]: 배열과 INI 파일, Gettext 파일 포맷을 지원합니다. 매번 파일시스템에서 읽어들이지 않아도 되도록
+- [laminas/laminas-i18n][laminas]: 배열과 INI 파일, Gettext 파일 포맷을 지원합니다. 매번 파일시스템에서 읽어들이지 않아도 되도록
 캐싱 레이어를 구현했습니다. 그리고 뷰 헬퍼, 로케일을 자동 인식해서 처리하는 입력값 필터와 검증기도 제공합니다.
 하지만 메시지 추출기는 제공하지 않습니다.
 
@@ -403,13 +403,13 @@ Poedit의 "Catalog > Properties > Source keywords" 를 통해서 설정할 수 �
 [func_format]: https://www.gnu.org/software/gettext/manual/gettext.html#Language-specific-options
 [aura-intl]: https://github.com/auraphp/Aura.Intl
 [oscarotero]: https://github.com/oscarotero/Gettext
-[symfony]: https://symfony.com/doc/current/components/translation.html
-[zend]: https://docs.zendframework.com/zend-i18n/translation
+[symfony]: https://symfony.com/components/Translation
+[laminas]: https://docs.laminas.dev/laminas-i18n/
 [laravel]: https://laravel.com/docs/master/localization
 [yii]: https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
 [intl]: https://secure.php.net/manual/intro.intl.php
-[ICU project]: http://www.icu-project.org
-[symfony-keys]: https://symfony.com/doc/current/components/translation/usage.html#creating-translations
+[ICU project]: https://icu.unicode.org/
+[symfony-keys]: https://symfony.com/doc/current/translation.html#using-real-or-keyword-messages
 
 [sprintf]: https://secure.php.net/manual/function.sprintf.php
 [func]: https://secure.php.net/manual/function.gettext.php
