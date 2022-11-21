@@ -11,8 +11,8 @@ anchor:  standard_php_library
 순회(traverse)하는데 사용할 수 있는 이터레이터들이 포함되어 있습니다.
 
 * [읽을거리: SPL][spl]
-* [SPL 영상강의 (Lynda.com 제공)(유료)][spllynda]
+* [링크드인에 있는 SPL 영상강의(유료)][linkedin]
 
 
 [spl]: https://secure.php.net/book.spl
-[spllynda]: https://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html
+[linkedin]: https://www.linkedin.com/learning/learning-the-standard-php-library?trk=lynda_redirect_learning

@@ -45,12 +45,12 @@ HTML 코드, SQL 쿼리, PHP 코드 등 웹 어플리케이션의 모든 레벨�
 좋겠습니다.
 
 마지막으로, 만약 분산 배포되는 환경에서 동작하는 어플리케이션을 만들어야 하는데, `mbstring` 익스텐션이 활성화 되어
-있는지 확신할 수 없는 상황이라면, [patchwork/utf8]이라는 Composer 패키지를 사용해보는 것도 좋겠습니다. 그 패키지를
+있는지 확신할 수 없는 상황이라면, [symfony/polyfill-mbstring]이라는 Composer 패키지를 사용해보는 것도 좋겠습니다. 그 패키지를
 사용하면, `mbstring` 익스텐션이 활성화되어 있으면 그쪽 함수들을 사용하고 활성화되어 있지 않으면 일반 문자열 함수가
 대신 호출되는 식으로 동작하게 만들어줍니다.
 
 [Multibyte String Extension]: https://secure.php.net/book.mbstring
-[patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
+[symfony/polyfill-mbstring]: https://packagist.org/packages/symfony/polyfill-mbstring
 
 ### 데이터베이스 수준에서의 UTF-8
 

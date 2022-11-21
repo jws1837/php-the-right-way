@@ -6,7 +6,7 @@ anchor:  opcode_cache
 
 ## Opcode 캐시 {#opcode_cache_title}
 
-PHP 파일을 실행하면 가장 먼저 이 파일은 컴파일해서 [opcode](https://secure.php.net/manual/internals2.opcodes.php) (CPU를 위한 기계 언어 명령) 로 만들게 됩니다.
+PHP 파일을 실행하면 가장 먼저 이 파일은 컴파일해서 [opcode](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (CPU를 위한 기계 언어 명령) 로 만들게 됩니다.
 원본 PHP 파일이 수정되지 않으면 컴파일된 opcode는 항상 같기때문에, 이러한 컴파일 과정은 CPU 리소스 낭비가 됩니다.
 
 opcode 캐시는 opcode를 메모리에 보관하고, 이후 호출 시에 재사용하여 불필요한 컴파일 과정이 일어나지 않게 합니다. 보통 시그니처나 파일의 수정 시각을 먼저 확인하여 변경이 있는지 검사합니다.
@@ -25,8 +25,8 @@ opcode 캐시는 아마 여러분의 어플리케이션을 상당히 빠르게 �
 
 
 [opcache-book]: https://secure.php.net/book.opcache
-[APC]: https://secure.php.net/book.apc
-[XCache]: https://xcache.lighttpd.net/
+[APC]: https://www.php.net/book.apcu
+[XCache]: https://github.com/lighttpd/xcache
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: https://www.iis.net/downloads/microsoft/wincache-extension
 [PHP_accelerators]: https://wikipedia.org/wiki/List_of_PHP_accelerators

@@ -10,7 +10,7 @@ anchor:  windows_setup
 
 학습 혹은 로컬에서의 개발이 목적이라면 PHP 5.4 부터 내장되어 있는 웹서버를 사용하면, 웹서버 설치와 설정에 대한
 걱정없이 시작할 수 있습니다. 완전한 웹서버와 MySQL 데이터베이스 등을 포함한 "통합(All-in-One)" 패키지를 선호한다면
-[Web Platform Installer][wpi]나 [XAMPP][xampp], [EasyPHP][easyphp], [OpenServer][openserver], [WAMP][wamp] 등을 사용하여 빠르게 윈도우에서 개발
+[XAMPP][xampp], [EasyPHP][easyphp], [OpenServer][openserver], [WAMP][wamp] 등을 사용하여 빠르게 윈도우에서 개발
 환경을 갖출 수 있습니다. 이런 패키지를 사용할 때는, 윈도우에서 개발하고 리눅스에 배포하는 식의 개발환경과 배포환경이
 다른 환경의 차이에 주의해야 합니다.
 
@@ -23,13 +23,12 @@ anchor:  windows_setup
 
 Chris Tankersley 가 [윈도우즈를 이용한 PHP 개발시 그가 사용하는 도구에 대한 매우 도움이 되는 블로그 글][windows-tools]을 썻습니다.
 
-[easyphp]: http://www.easyphp.org/
+[easyphp]: https://www.easyphp.org/
 [phpmanager]: http://phpmanager.codeplex.com/
-[openserver]: http://open-server.ru/
-[wamp]: http://www.wampserver.com/en/
-[php-downloads]: http://windows.php.net/download/
-[php-iis]: http://php.iis.net/
-[windows-path]: http://www.windows-commandline.com/set-path-command-line/
-[windows-tools]: http://ctankersley.com/2016/11/13/developing-on-windows-2016/
-[wpi]: https://www.microsoft.com/web/downloads/platform.aspx
-[xampp]: http://www.apachefriends.org/en/xampp.html
+[openserver]: https://ospanel.io/
+[wamp]: https://www.wampserver.com/en/
+[php-downloads]: https://windows.php.net/download/
+[php-iis]: https://php.iis.net/
+[windows-path]: https://www.windows-commandline.com/set-path-command-line/
+[windows-tools]: https://ctankersley.com/2016/11/13/developing-on-windows-2016/
+[xampp]: http://www.apachefriends.org/

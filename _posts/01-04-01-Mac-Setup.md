@@ -83,5 +83,5 @@ PHP를 요구하지만, 가상 머신은 사용하고 있지 않을때 매우 �
 [apache]: https://httpd.apache.org/
 [nginx]: https://www.nginx.com/
 [mamp-downloads]: https://www.mamp.info/en/downloads/
-[xampp]: https://www.apachefriends.org/index.html
+[xampp]: https://www.apachefriends.org/
 [brew-php-switcher]: https://github.com/philcook/brew-php-switcher

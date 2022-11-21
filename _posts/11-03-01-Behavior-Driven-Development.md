@@ -27,7 +27,7 @@ SpecBDD 기법을 사용한다면 여러분의 코드가 어떻게 행위할 것
 * [Codeception]은 BDD의 원칙을 사용하는 풀스택(full-stack) 테스트 프레임워크입니다.
 
 
-[Behat]: http://behat.org/
+[Behat]: https://behat.org/
 [Cucumber]: https://cucumber.io/
 [PHPSpec]: https://www.phpspec.net/
 [RSpec]: https://rspec.info/
