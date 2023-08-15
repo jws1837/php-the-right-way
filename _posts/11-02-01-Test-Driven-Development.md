@@ -41,8 +41,9 @@ anchor:  test_driven_development
 프레임워크들도 상당수 존재합니다.
 
 * [atoum](https://github.com/atoum/atoum)
-* [Kahlan](https://github.com/crysalead/kahlan)
+* [Kahlan](https://github.com/kahlan/kahlan)
 * [Peridot](https://peridot-php.github.io/)
+* [Pest](https://pestphp.com/)
 * [SimpleTest](https://github.com/simpletest/simpletest)
 
 ### 통합 테스트

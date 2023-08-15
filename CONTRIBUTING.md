@@ -3,7 +3,7 @@
 이 문서는 프로젝트의 중심이라고 할 수 있는 영어판 PHP The Right Way 프로젝트에
 포함되어 있는 문서를 번역한 것이라서 영어판 프로젝트에 기여하는 방법을 설명하고 있습니다.
 
-[PHP The Right Way](http://phptherightway.com) 를 즐기고 있습니까?
+[PHP The Right Way](https://phptherightway.com) 를 즐기고 있습니까?
 참여하고 싶습니까? 좋습니다! 도움을 줄 수 있는 많은 방법이 있습니다.
 
 관련된 모두에게 쉽고 효과적인 프로젝트 기여 프로세스를 만들기 위해서 이 문서를 리뷰하는데에
@@ -21,7 +21,7 @@
 교환하는데에 좋은 채널입니다. 하지만 아래의 규칙을 유념해 주십시오.
 
 * 개인적인 질문이나 지원을 요청하는데에 이슈 트래커를 **사용하지 마십시오**. (그럴 때는 
-  [Stack Overflow](http://stackoverflow.com/questions/tagged/php) 나 
+  [Stack Overflow](https://stackoverflow.com/questions/tagged/php) 나 
   IRC를 사용해 주십시오)
 
 * 이슈의 논점을 흐리거나 논란을 일으키기 위한 도발은 **하지 마십시오**. 논의 주제에 맞게, 
@@ -37,7 +37,7 @@
 
 여러분의 작업 결과물을 반영하려면 아래와 같은 과정을 거치면 됩니다.
 
-1. 이 프로젝트를 [Fork](http://help.github.com/fork-a-repo/)하여 생성된 여러분의
+1. 이 프로젝트를 [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)하여 생성된 여러분의
    저장소를 clone 한 후에 리모트 저장소를 설정합니다.
 
    ```bash
@@ -73,8 +73,8 @@
     ```
 
 5. 논리적인 단위로 여러분의 수정 내용을 commit 합니다. [git commit
-   message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)에 따라 메시지를 적절히 작성합니다. 여러분의 커밋을 공개하기 전에, 
-   git의 [interactive rebase](https://help.github.com/articles/about-git-rebase) 기능을 사용해서 커밋을 깔끔하게 정리합니다.
+   message guidelines](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)에 따라 메시지를 적절히 작성합니다. 여러분의 커밋을 공개하기 전에, 
+   git의 [interactive rebase](https://docs.github.com/en/get-started/using-git/about-git-rebase) 기능을 사용해서 커밋을 깔끔하게 정리합니다.
 
 6. 로컬 저장소에서 upstream 개발 브랜치를 여러분의 토픽 브랜치로 merge(혹은 rebase)합니다.
 
@@ -88,19 +88,19 @@
    git push origin <topic-branch-name>
    ```
 
-8. 알아보기 쉬운 제목과 설명을 붙여서 [풀 리퀘스트를 보냅니다.](https://help.github.com/articles/using-pull-requests/)
+8. 알아보기 쉬운 제목과 설명을 붙여서 [풀 리퀘스트를 보냅니다.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
 
 ## 프로젝트에 기여함으로써 동의하게 되는 내용
 
 이 프로젝트의 저장소로 풀 리퀘스트를 보낸다는 것은, 이 프로젝트 관리자가 여러분의 저작 내용을
-[크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 3.0 Unported 라이선스](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ko)에 따라
+[크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 3.0 Unported 라이선스](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.ko)에 따라
 공개하고 사용허가를 한다는 것에 동의한다는 의미가 됩니다.
 
 모든 PHP The Right Way 출판물은 아래에 나열된 출판 방식/위치와 미래에 추가될 수 있는
 다른 방식/위치를 포함하여 동일한 내용과 동일한 라이선스에 따라 사용 허가됩니다. 
 
-* [phptherightway.com](http://phptherightway.com)
+* [phptherightway.com](https://phptherightway.com)
 * phptherightway.com 을 다른 언어로 번역한 출판물
 * [LeanPub: PHP The Right Way](https://leanpub.com/phptherightway/)
 * "LeanPub: PHP The Right Way"을 다른 언어로 번역한 출판물
@@ -114,7 +114,7 @@
 3. 한 줄 너비는 120글자로 합니다. (역주 : 한국어판의 경우 한 줄 너비를 60자로 쓰려고 합니다.)
 4. 예제 코드는 PSR-1 이나 그 이상 버전을 준수해야 합니다.
 5. 내용은 [GitHub Flavored Markdown](https://github.github.com/gfm/) 문서 형식으로 작성합니다.
-6. [php.net](http://php.net/urlhowto.php) 매뉴얼 같은 외부 사이트 링크를 걸 때에는 가급적 언어 중립적인 주소를 사용합니다.
+6. [php.net](https://php.net/urlhowto.php) 매뉴얼 같은 외부 사이트 링크를 걸 때에는 가급적 언어 중립적인 주소를 사용합니다.
 
 ## 외부 링크 컨텐트 번역 규칙
 

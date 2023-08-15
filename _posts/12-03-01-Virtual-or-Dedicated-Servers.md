@@ -26,10 +26,10 @@ PHP와 Apache는 함께한 역사가 아주 깁니다. Apache는 설정으로 �
 서버이기도 하고, WordPress 같은 오픈소스 어플리케이션이나 PHP 프레임워크를 설치하기에도 쉽습니다. 하지만 nginx에
 비교하면 기본적으로 Apache가 더 많은 리소스를 사용하고, 처리할 수 있는 동시접속 수도 적습니다.
 
-PHP를 위한 다양한 설정을 Apache에서 할 수 있습니다. 공통적으로 가장 많이 사용하고 쉽게 할 수 있는 설정은 mod_php5
+PHP를 위한 다양한 설정을 Apache에서 할 수 있습니다. 공통적으로 가장 많이 사용하고 쉽게 할 수 있는 설정은 `mod_php`
 모듈을 사용하는 [prefork MPM] 방식입니다. 메모리 활용이 가장 효율적인 선택은 아니지만 가장 쉽게 어플리케이션을
 설치하여 동작시킬 수 있습니다. 시스템과 서버 관리 측면을 너무 깊이 파고들고 싶지 않다면 이 방식이 가장 좋습니다.
-mod_php5 모듈을 사용한다면 prefork MPM도 반드시 사용해야 한다는 것을 기억하세요.
+`mod_php` 모듈을 사용한다면 prefork MPM도 반드시 사용해야 한다는 것을 기억하세요.
 
 다른 방법으로, Apache 로부터 성능과 안정성을 더 짜내고 싶다면 nginx에서와 같이 FastCGI를 사용하는 방법이 있습니다.
 [worker MPM]이나 [event MPM]을 mod_fastcgi나 mod_fcgid 모듈과 함께 사용하는 것입니다. 앞에서 얘기한 방식이 비하면
@@ -46,7 +46,7 @@ If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get grea
 
 
 [nginx]: https://nginx.org/
-[phpfpm]: https://secure.php.net/install.fpm
+[phpfpm]: https://www.php.net/install.fpm
 [secure-nginx-phpfpm]: https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
 [apache-modules]: https://httpd.apache.org/docs/2.4/mod/
 [prefork MPM]: https://httpd.apache.org/docs/2.4/mod/prefork.html
@@ -55,6 +55,6 @@ If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get grea
 [apache]: https://httpd.apache.org/
 [apache-MPM]: https://httpd.apache.org/docs/2.4/mod/mpm_common.html
 [mod_fastcgi]: https://blogs.oracle.com/opal/post/php-fpm-fastcgi-process-manager-with-apache-2
-[mod_fcgid]: hhttps://httpd.apache.org/mod_fcgid/
+[mod_fcgid]: https://httpd.apache.org/mod_fcgid/
 [mod_proxy_fcgi]: https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html
 [tutorial-mod_proxy_fcgi]: https://serversforhackers.com/video/apache-and-php-fpm

@@ -10,7 +10,7 @@ PHP 커뮤니티는 매우 거대하고, 수많은 라이브러리와 프레임�
 수월하게 하려면, 가능한한 공통적인 코드 스타일을 적용하는 일은 매우 중요합니다.
 
 [프레임워크 운용 그룹(Framework Interoperability Group)][fig]에서는 [PSR-1][psr1], [PSR-12][psr12],
-[PSR-4][psr4]라는 권장 스타일 가이드를 발표했습니다. 이들 가이드는 Drupal, Zend, Symfony, Laravel, CakePHP, phpBB, AWS SDK,
+[PSR-4][psr4], [PER Coding Style][per-cs]라는 권장 스타일 가이드를 발표했습니다. 이들 가이드는 Drupal, Zend, Symfony, Laravel, CakePHP, phpBB, AWS SDK,
 FuelPHP, Lithium 등의 프로젝트에서 적용하기 시작한 스타일 규칙입니다. 여러분의 프로젝트에서 이러한 스타일 가이드를
 사용할 수도있고, 혹은 여러분 자신만의 스타일을 그대로 사용할 수도 있습니다.
 
@@ -21,6 +21,7 @@ FuelPHP, Lithium 등의 프로젝트에서 적용하기 시작한 스타일 규�
 * [읽을거리: PSR-1][psr1]
 * [읽을거리: PSR-12][psr12]
 * [읽을거리: PSR-4][psr4]
+* [읽을거리: PER Coding Style][per-cs]
 * [읽을거리: PEAR 코딩 표준][pear-cs]
 * [읽을거리: Symfony 코딩 표준][symfony-cs]
 
@@ -58,9 +59,10 @@ PHP_CodeSniffer 가 있다면, 확인된 코드 레이아웃 문제를 [PHP Code
 [psr1]: https://www.php-fig.org/psr/psr-1/
 [psr12]: https://www.php-fig.org/psr/psr-12/
 [psr4]: https://www.php-fig.org/psr/psr-4/
+[per-cs]: https://www.php-fig.org/per/coding-style/
 [pear-cs]: https://pear.php.net/manual/en/standards.php
 [symfony-cs]: https://symfony.com/doc/current/contributing/code/standards.html
-[phpcs]: https://pear.php.net/package/PHP_CodeSniffer/
+[phpcs]: https://github.com/squizlabs/PHP_CodeSniffer
 [phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: https://cs.symfony.com/

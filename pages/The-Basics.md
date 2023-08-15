@@ -32,9 +32,9 @@ if (strpos('testing', 'test') !== false) {    // (0 !== false)의 비교 결과�
 }
 {% endhighlight %}
 
-* [비교 연산자](http://php.net/language.operators.comparison)
-* [비교 연산자 테이블](http://php.net/types.comparisons)
-* [비교 연산자 도움말](http://phpcheatsheets.com/index.php?page=compare)
+* [비교 연산자](https://www.php.net/language.operators.comparison)
+* [비교 연산자 테이블](https://www.php.net/types.comparisons)
+* [비교 연산자 도움말](https://phpcheatsheets.com/index.php?page=compare)
 
 ## 조건 구문 {#conditional-statements}
 
@@ -73,7 +73,7 @@ function test($a)
 
 {% endhighlight %}
 
-* [If 구문](http://php.net/control-structures.if)
+* [If 구문](https://www.php.net/control-structures.if)
 
 ### Switch 구문 {#switch-statements}
 
@@ -108,7 +108,7 @@ function test($a)
 }
 {% endhighlight %}
 
-* [Switch 구문](http://php.net/control-structures.switch)
+* [Switch 구문](https://www.php.net/control-structures.switch)
 * [PHP switch](http://phpswitch.com/)
 
 ## 전역 네임스페이스 {#global-namespace}
@@ -133,8 +133,8 @@ function array()
 }
 {% endhighlight %}
 
-* [Global space](http://php.net/language.namespaces.global)
-* [Global rules](http://php.net/userlandnaming.rules)
+* [Global space](https://www.php.net/language.namespaces.global)
+* [Global rules](https://www.php.net/userlandnaming.rules)
 
 ## 문자열 {#strings}
 
@@ -158,7 +158,7 @@ $a = 'Multi-line example'      // 연결 연산자 (.)
     . 'of what to do';
 {% endhighlight %}
 
-* [문자열 연산자](http://php.net/language.operators.string)
+* [문자열 연산자](https://www.php.net/language.operators.string)
 
 ### 문자열의 유형 {#string-types}
 
@@ -182,7 +182,7 @@ echo 'This is my string, look at how pretty it is.';    // 단순히 텍스트�
  */
 {% endhighlight %}
 
-* [작은따옴표](http://php.net/language.types.string#language.types.string.syntax.single)
+* [작은따옴표](https://www.php.net/language.types.string#language.types.string.syntax.single)
 
 #### 큰따옴표 {#double-quotes}
 
@@ -232,7 +232,7 @@ $juice = array('apple', 'orange', 'plum');
 echo "I drank some juice made of {$juice[1]}s";   // $juice[1] 이 잘 분석된다.
 {% endhighlight %}
 
-* [큰따옴표](http://php.net/language.types.string#language.types.string.syntax.double)
+* [큰따옴표](https://www.php.net/language.types.string#language.types.string.syntax.double)
 
 #### Nowdoc 문법 {#nowdoc-syntax}
 
@@ -257,7 +257,7 @@ EOD;                        // 끝을 나타내는 'EOD'는 반드시 줄의 가
  */
 {% endhighlight %}
 
-* [Nowdoc 문법](http://php.net/language.types.string#language.types.string.syntax.nowdoc)
+* [Nowdoc 문법](https://www.php.net/language.types.string#language.types.string.syntax.nowdoc)
 
 #### Heredoc 문법 {#heredoc-syntax}
 
@@ -284,7 +284,7 @@ EOD;                        // 끝을 나타내는 'EOD'는 반드시 줄의 가
  */
 {% endhighlight %}
 
-* [Heredoc 문법](http://php.net/language.types.string#language.types.string.syntax.heredoc)
+* [Heredoc 문법](https://www.php.net/language.types.string#language.types.string.syntax.heredoc)
 
 > It should be noted that multiline strings can also be formed by continuing them across multilines in a statement. _e.g._
 > 여러 줄에 걸쳐 계속 입력하는 방식으로 여러 줄을 작성할 수도 있다는 것에도 주목할 필요가 있습니다. _예를 들어_
@@ -322,7 +322,7 @@ $a are parsed.
 다시 작성하는 것은 굉장히 무의미한 일입니다. 그렇기 때문에 두 차이가 갖는 의미와 효과를 완전히 이해하지 않았다면
 이러한 작은 최적화(micro-optimization)는 피해야 합니다.
 
-* [작은따옴표의 성능에 대한 반증](http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
+* [작은따옴표의 성능에 대한 반증](https://www.npopov.com/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
 
 ## 삼항 연산자 {#ternary-operators}
 
@@ -405,4 +405,4 @@ return ($a != 3 && $b != 4) || $c == 5;
 
 PHP 5.3부터 삼항 연사자의 중간 부분을 생략 가능합니다.
 "expr1 ?: expre3" 표현식은 expr1이 TRUE로 평가되는 경우 expr1을 리턴하고, 아닌 경우에 expr3을 리턴합니다.
-* [삼항 연산자](http://php.net/language.operators.comparison)
+* [삼항 연산자](https://www.php.net/language.operators.comparison)

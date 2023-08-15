@@ -60,7 +60,7 @@ $stmt->execute();
 
 먼저 [데이터를 필터링](#_data_filtering)하고, 다른 위험한 요소(HTML 태그, 자바스크립트 등)를 제거하는 것은 INSERT나 UPDATE와 같은 쓰기 작업에 특히 중요합니다. PDO는 여러분이 작성하는 어플리케이션이 아니라, SQL에서만 위험한 요소를 제거합니다.
 
-* [알아보기: PDO][Learn about PDO]
+* [알아보기: PDO][Learn about PDO][pdo]
 
 데이터베이스 연결을 사용할 때에는 데이터베이스 연결을 잘 닫는데 신경쓰지 않았을 경우에 한 번 열어 둔 데이터베이스
 연결이 닫히지 않아서 더이상 새로운 연결을 할 수 없는 경우가 발생하기도 합니다. PDO를 사용하면 PDO 객체가 파괴될 때
@@ -70,7 +70,6 @@ $stmt->execute();
 * [알아보기: PDO 연결][Learn about PDO connections]
 
 
-[pdo]: https://secure.php.net/pdo
-[SQL Injection]: http://wiki.hashphp.org/Validation
-[Learn about PDO]: https://secure.php.net/book.pdo
-[Learn about PDO connections]: https://secure.php.net/pdo.connections
+[pdo]: https://www.php.net/pdo
+[SQL Injection]: https://web.archive.org/web/20210413233627/http://wiki.hashphp.org/Validation
+[Learn about PDO connections]: https://www.php.net/pdo.connections

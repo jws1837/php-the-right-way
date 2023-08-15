@@ -16,4 +16,4 @@ PHP 5.4 이상의 버전은 다른 웹서버의 설치와 설정 없이 PHP를 �
 * [내장 웹 서버에 대해서 배우기][cli-server]
 
 
-[cli-server]: http://php.net/features.commandline.webserver
+[cli-server]: https://www.php.net/features.commandline.webserver

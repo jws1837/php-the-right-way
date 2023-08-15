@@ -72,7 +72,7 @@ Exception을 던지거나 Exception 클래스를 상속받은 예외 클래스�
 
 
 [splext]: /#standard_php_library
-[exceptions]: https://secure.php.net/language.exceptions
-[splexe]: https://secure.php.net/spl.exceptions
+[exceptions]: https://www.php.net/language.exceptions
+[splexe]: https://www.php.net/spl.exceptions
 [nesting-exceptions-in-php]: https://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/
 

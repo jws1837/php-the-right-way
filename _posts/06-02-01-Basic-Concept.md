@@ -30,6 +30,7 @@ class MysqlAdapter {}
 {% endhighlight %}
 
 아래와 같이 리팩터링하여 의존성 주입을 사용하도록 하면 의존 관계를 약화시킬 수 있습니다.
+여기서는 생성자에 종속성을 주입하고 [constructor property promotion][php-constructor-promotion]을 사용하여 클래스 전체에서 프로퍼티로 사용할 수 있도록 합니다:
 
 {% highlight php %}
 <?php
@@ -37,11 +38,8 @@ namespace Database;
 
 class Database
 {
-    protected $adapter;
-
-    public function __construct(MySqlAdapter $adapter)
+    public function __construct(protected MySqlAdapter $adapter)
     {
-        $this->adapter = $adapter;
     }
 }
 
@@ -51,3 +49,5 @@ class MysqlAdapter {}
 이제 `Database`는 내부에서 직접 의존 관계에 있는 클래스 인스턴스를 생성하지 않고, 외부에서 전달받게 되었습니다. 어댑터
 인스턴스를 인자로 전달받는 메소드를 만들어서 해당 어댑터를 사용하도록 설정하는 방식을 적용하거나, `$adapter`
 프로퍼티를 `public` 으로 만들어서 프로퍼티를 직접 설정하게 할 수도 있을 것입니다.
+
+[php-constructor-promotion]: https://www.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor.promotion

@@ -62,5 +62,5 @@ PHP 구문 강조와 자동완성이 내장되어 있습니다. 더구나, 단�
 {% endhighlight %}
 
 
-[plates]: http://platesphp.com/
+[plates]: https://platesphp.com/
 [aura]: https://github.com/auraphp/Aura.View

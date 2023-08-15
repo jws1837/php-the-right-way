@@ -58,8 +58,7 @@ Cross-Site Scripting (XSS)이라고 합니다. 매우 위험한 공격 기법이
 이는 악의를 가진 사용자가 사용자 정의 프로퍼티를 가지고 소멸자(destructors)는 실행하게되는 객체를 만들어내도록 허용하게 됩니다.
 따라서 신뢰할 수 없는 데이터는 역직렬화하지 말아야합니다.
 
-신뢰할 수 없는 곳으로부터의 데이터를 역직렬화해야만 한다면, PHP 7의 [`allowed_classes`][unserialize] 옵션을 사용하여
-역직렬화 가능한 객체 형식을 제한하세요.
+사용자에게 직렬화된 데이터를 전달해야 하는 경우 JSON과 같은 안전한 표준 데이터 교환 형식([`json_decode`][json_decode] 및 [`json_encode`][json_encode])을 사용하세요.
 
 ### 데이터 검증
 
@@ -69,11 +68,12 @@ Cross-Site Scripting (XSS)이라고 합니다. 매우 위험한 공격 기법이
 [PHP의 검증 필터 문서 보기][3]
 
 
-[1]: https://secure.php.net/book.filter
-[2]: https://secure.php.net/filter.filters.sanitize
-[3]: https://secure.php.net/filter.filters.validate
-[4]: https://secure.php.net/function.filter-var
-[5]: https://secure.php.net/function.filter-input
-[6]: https://secure.php.net/security.filesystem.nullbytes
+[1]: https://www.php.net/book.filter
+[2]: https://www.php.net/filter.filters.sanitize
+[3]: https://www.php.net/filter.filters.validate
+[4]: https://www.php.net/function.filter-var
+[5]: https://www.php.net/function.filter-input
+[6]: https://www.php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
-[unserialize]: https://secure.php.net/manual/function.unserialize.php
+[json_decode]: https://www.php.net/manual/function.json-decode.php
+[json_encode]: https://www.php.net/manual/function.json-encode.php

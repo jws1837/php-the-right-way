@@ -21,5 +21,3 @@ anchor:  php_paas_providers
 * [Pivotal Web Services](https://run.pivotal.io/)
 * [Platform.sh](https://platform.sh/)
 * [Red Hat OpenShift](https://www.openshift.com/)
-
-위의 PaaS 제공자들이 어떤 버전을 사용하는지 확인하려면, [PHP Versions](http://phpversions.info/paas-hosting/)를 확인하세요.

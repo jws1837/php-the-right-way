@@ -15,6 +15,6 @@ PHP 어플리케이션에서 _단 하나의_ 데이터베이스만을 사용하�
 마련이죠.
 
 
-[mysqli]: https://secure.php.net/mysqli
-[pgsql]: https://secure.php.net/pgsql
-[mssql]: https://secure.php.net/mssql
+[mysqli]: https://www.php.net/mysqli
+[pgsql]: https://www.php.net/pgsql
+[mssql]: https://www.php.net/mssql

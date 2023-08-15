@@ -82,6 +82,6 @@ print_r($output); // 3보다 큰 숫자만 출력된다.
 * [클로저 RFC에서 좀 더 상세한 내용 보기][closures-rfc]
 * [`call_user_func_array()` 내장 함수로 동적으로 호출하는 방법에 대해 PHP 매뉴얼 보기][call-user-func-array]
 
-[anonymous-functions]: http://php.net/functions.anonymous
+[anonymous-functions]: https://www.php.net/functions.anonymous
 [closures-rfc]: https://wiki.php.net/rfc/closures
-[call-user-func-array]: http://php.net/function.call-user-func-array
+[call-user-func-array]: https://www.php.net/function.call-user-func-array

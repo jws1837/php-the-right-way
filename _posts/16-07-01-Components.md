@@ -47,7 +47,7 @@ _Laravel의 [Illuminate 컴포넌트][Illuminate components]는 Laravel 프레�
 [PEAR]: /#pear
 [Dependency Management]: /#dependency_management
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/framework/
+[Aura]: https://auraphp.com/framework/
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
 [Symfony Components]: https://symfony.com/components

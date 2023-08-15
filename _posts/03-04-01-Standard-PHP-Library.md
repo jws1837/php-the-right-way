@@ -14,5 +14,5 @@ anchor:  standard_php_library
 * [링크드인에 있는 SPL 영상강의(유료)][linkedin]
 
 
-[spl]: https://secure.php.net/book.spl
+[spl]: https://www.php.net/book.spl
 [linkedin]: https://www.linkedin.com/learning/learning-the-standard-php-library?trk=lynda_redirect_learning

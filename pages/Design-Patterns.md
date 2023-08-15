@@ -12,7 +12,7 @@ sitemap: true
 
 * [위키백과: Architectural pattern](https://en.wikipedia.org/wiki/Architectural_pattern)
 * [위키백과: Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Collection of implementation examples](http://designpatternsphp.readthedocs.io/en/latest/)
+* [Collection of implementation examples](https://designpatternsphp.readthedocs.io/en/latest/)
 
 ## 팩토리(Factory) {#factory}
 
@@ -71,20 +71,20 @@ print_r($veyron->getMakeAndModel()); // "Bugatti Veyron"을 출력
 
 **TODO: NEED NEW SINGLETON CODE EXAMPLE**
 
-이 코드에서는 [*정적(static)* 변수](http://php.net/language.variables.scope#language.variables.scope.static)와 정적
+이 코드에서는 [*정적(static)* 변수](https://php.net/language.variables.scope#language.variables.scope.static)와 정적
 생성 메소드(`getInstance()`)를 사용한 싱글턴 구현을 보여주고 있습니다. 아래 내용을 유념하세요.
 
 다음 내용을 유의하세요:
 
-* 생성자 [`__construct()`](http://php.net/language.oop5.decon#object.construct)는 `new` 연산자를 사용해서 다른 곳에서
+* 생성자 [`__construct()`](https://php.net/language.oop5.decon#object.construct)는 `new` 연산자를 사용해서 다른 곳에서
 함부로 생성할 수 없도록 protected 로 제한되어 있습니다.
-* 특수 매서드(Magic Method) [`__clone()`](http://php.net/language.oop5.cloning#object.clone)은
-[`clone`](http://php.net/language.oop5.cloning) 연산자를 사용해서 복제할 수 없도록 private 으로 제한되어 있습니다.
-* 특수 매서드(Magic Method) [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup)은 전역 함수
-[`unserialize()`](http://php.net/function.unserialize)를 이용해서 unserialize 할 수 없도록 private 으로 제한되어
+* 특수 매서드(Magic Method) [`__clone()`](https://php.net/language.oop5.cloning#object.clone)은
+[`clone`](https://php.net/language.oop5.cloning) 연산자를 사용해서 복제할 수 없도록 private 으로 제한되어 있습니다.
+* 특수 매서드(Magic Method) [`__wakeup()`](https://php.net/language.oop5.magic#object.wakeup)은 전역 함수
+[`unserialize()`](https://php.net/function.unserialize)를 이용해서 unserialize 할 수 없도록 private 으로 제한되어
 있습니다.
 * 새 인스턴스 생성 시에는 정적 메소드인 `getInstance()` 내에서
-[지연된 정적 바인딩](http://php.net/language.oop5.late-static-bindings)을 통해서 생성됩니다. `static` 키워드가
+[지연된 정적 바인딩](https://php.net/language.oop5.late-static-bindings)을 통해서 생성됩니다. `static` 키워드가
 사용되고 있는데요, 지연된 정적 바인딩을 사용함으로써 `Singleton` 클래스를 상속해서 싱글턴 패턴을 사용하는 자식
 클래스들을 만들 수 있게 됩니다.
 
@@ -147,7 +147,7 @@ class ArrayOutput implements OutputInterface
 
 각각의 '출력' 클래스들이 어떻게 OutputInterface를 구현하고 있는지 보이실 겁니다. 이러한 방식에는 두 가지 목적이
 있는데, 첫 번째는 각각의 출력 클래스 구현체들이 준수해야하는 구현 규칙을 제공하는 것이고, 두 번째는 공통적으로
-'OutputInterface' 인터페이스를 구현함으로써 [타입 힌팅](http://php.net/language.oop5.typehinting)을 통해 알고리즘을
+'OutputInterface' 인터페이스를 구현함으로써 [타입 힌팅](https://php.net/language.oop5.typehinting)을 통해 알고리즘을
 사용하는 코드 쪽도 정확한 타입을 사용하도록 보장하는 것입니다.
 
 아래 코드는 알고리즘을 사용하는 코드 쪽에서는 어떻게 구현해야 런타임에 동적으로 적당한 알고리즘을 설정하여 사용하게 할
@@ -188,7 +188,7 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [위키백과: Strategy pattern](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [위키백과: Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## 프론트 컨트롤러(Front Controller) {#front-controller}
 

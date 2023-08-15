@@ -17,8 +17,9 @@ anchor:  design_patterns
 
 * 아래 링크에서 PHP 디자인 패턴에 대해 더 배우고 동작하는 예제를 확인하실 수 있습니다.
 
-<https://designpatternsphp.readthedocs.io/>
+* <https://refactoring.guru/design-patterns/php>
+* [https://designpatternsphp.readthedocs.io/](https://designpatternsphp.readthedocs.io/en/latest/) ([PDF download](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))
 
 (역주 : 그리고 또 놀랍게도 한국어 번역 페이지가 존재합니다!)
 
-<https://designpatternsphpko.readthedocs.io/>
+* <https://designpatternsphpko.readthedocs.io/>

@@ -20,15 +20,15 @@ anchor:  databases_abstraction_layers
 * [Doctrine2 DBAL][2]
 * [Medoo][8]
 * [Propel][7]
-* [Zend-db][4]
+* [laminas-db][4]
 
 
-[1]: https://secure.php.net/book.pdo
+[1]: https://www.php.net/book.pdo
 [2]: https://www.doctrine-project.org/projects/dbal.html
-[4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
+[4]: https://docs.laminas.dev/laminas-db/
 [5]: https://atlasphp.io
 [6]: https://github.com/auraphp/Aura.Sql
-[7]: http://propelorm.org/
+[7]: https://propelorm.org/
 [8]: https://medoo.in/
 [psr0]: https://www.php-fig.org/psr/psr-0/
 [psr4]: https://www.php-fig.org/psr/psr-4/

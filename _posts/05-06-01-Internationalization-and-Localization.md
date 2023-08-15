@@ -42,7 +42,7 @@ Gettext 를 보조하는 방식이나, 직접 i18n 을 구현한 다른 라이�
 - [aura/intl][aura-intl]: I18N 도구를 제공하는데, 특히 패키지 지향적인 
 지역별 메시지 번역에 집중되어 있습니다. 메시지는 배열 형식으로 관리합니다. 메시지 추출기는 제공하지 않지만
 `intl` 확장을 이용해서 (복수형 메시지를 포함한) 고급 메시지 포매팅 기능을 제공합니다.
-- [oscarotero/Gettext][oscarotero]: Gettext 를 객체지향 인터페이스로 지원합니다. 향상된 헬퍼 함수들, 
+- [php-gettext/Gettext][php-gettext]: Gettext 를 객체지향 인터페이스로 지원합니다. 향상된 헬퍼 함수들, 
 `gettext` 커맨드가 자체적으로는 지원하지 못하는 것을 포함한 여러가지 파일 포맷을 지원하는 강력한 메시지 추출기를 가지고 있습니다.
 그리고 `.mo/.po` 같은 다른 파일 포맷으로 내보내기도 할 수 있습니다.
 - [symfony/translation][symfony]: 많은 종류의 파일 포맷을 지원하지만 조금 장황한 XLIFF 포맷을 권장합니다.
@@ -387,14 +387,14 @@ Poedit의 "Catalog > Properties > Source keywords" 를 통해서 설정할 수 �
 * [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 * [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
 * [LingoHub: PHP internationalization with gettext tutorial][lingohub]
-* [PHP Manual: Gettext](https://secure.php.net/manual/book.gettext.php)
+* [PHP Manual: Gettext](https://www.php.net/manual/book.gettext.php)
 * [Gettext Manual][manual]
 
 [Poedit]: https://poedit.net
 [poedit_download]: https://poedit.net/download
 [lingohub]: https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/
 [lingohub_plurals]: https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/#Plurals
-[plural]: http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html
+[plural]: https://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html
 [gettext]: https://en.wikipedia.org/wiki/Gettext
 [manual]: https://www.gnu.org/software/gettext/manual/gettext.html
 [639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
@@ -402,17 +402,17 @@ Poedit의 "Catalog > Properties > Source keywords" 를 통해서 설정할 수 �
 [rare]: https://www.gnu.org/software/gettext/manual/gettext.html#Rare-Language-Codes
 [func_format]: https://www.gnu.org/software/gettext/manual/gettext.html#Language-specific-options
 [aura-intl]: https://github.com/auraphp/Aura.Intl
-[oscarotero]: https://github.com/oscarotero/Gettext
+[php-gettext]: https://github.com/php-gettext/Gettext
 [symfony]: https://symfony.com/components/Translation
 [laminas]: https://docs.laminas.dev/laminas-i18n/
 [laravel]: https://laravel.com/docs/master/localization
 [yii]: https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n
-[intl]: https://secure.php.net/manual/intro.intl.php
+[intl]: https://www.php.net/manual/intro.intl.php
 [ICU project]: https://icu.unicode.org/
 [symfony-keys]: https://symfony.com/doc/current/translation.html#using-real-or-keyword-messages
 
-[sprintf]: https://secure.php.net/manual/function.sprintf.php
-[func]: https://secure.php.net/manual/function.gettext.php
-[n_func]: https://secure.php.net/manual/function.ngettext.php
-[d_func]: https://secure.php.net/manual/function.dgettext.php
-[dn_func]: https://secure.php.net/manual/function.dngettext.php
+[sprintf]: https://www.php.net/manual/function.sprintf.php
+[func]: https://www.php.net/manual/function.gettext.php
+[n_func]: https://www.php.net/manual/function.ngettext.php
+[d_func]: https://www.php.net/manual/function.dgettext.php
+[dn_func]: https://www.php.net/manual/function.dngettext.php

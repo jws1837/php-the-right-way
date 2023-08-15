@@ -33,8 +33,6 @@ anchor:  building_and_deploying_your_application
 
 [Ansistrano]는 PHP, Python 및 Ruby와 같은 스크립팅 응용 프로그램의 배포 프로세스(배포 및 롤백)를 쉽게 관리할 수 있는 Ansible과 같은 역할을 합니다. [Capistrano]를 위한 Ansible 포트입니다. 이미 많은 PHP 회사에서 사용되고 있습니다.
 
-[Rocketeer]는 라라벨 프레임워크로부터 그 철학과 영감을 얻었습니다. 빠르고, 우아하며, 효과적인 기본값으로 쉽게 사용할 수 있는 것이 목표입니다. 여러 서버, 스테이지(stage), 원자적 배치와 배포를 병렬적으로 수행할 수 있습니다. 이 도구의 모든 것은 핫 스왑(hot swap)하거나 확장할 수 있으며, PHP로 작성되었습니다.
-
 [Deployer]는 PHP로 작성된 배포도구이며, 단순하고 함수형으로 작성되었습니다. 병렬적으로 태스크들을 실행하고, 원자적으로 배포하며, 서버간의 일관성을 유지하는 기능들을 포함하고 있습니다. Symfony, Laravel, Zend Framework, Yii를 위한 일반적인 레시피가 있습니다. Younes Rafie의 [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer]라는 글은 Deployer를 사용하여 어플리케이션을 배포하기 위한 좋은 튜토리얼입니다.
 
 [Magallanes]는 YAML 파일로 간단하게 설정할 수 있는 PHP로 작성된 도구입니다. 여러 서버와 환경, 원자적 배포와 함께, 일반적인 도구와 프레임워크에 활용할 수 있는 몇몇 내장 태스크가 있습니다.
@@ -73,9 +71,9 @@ anchor:  building_and_deploying_your_application
 *-- Martin Fowler*
 
 PHP 프로젝트에서 지속적인 통합 기법을 사용하는 방법에는 여러가지 방법이 있습니다. [Travis CI]가 작은 규모의
-프로젝트에도 현실성있게 적용할 수 있도록 멋진 결과물을 내놓고 있습니다. Travis CI는 오픈소스 커뮤니티를 위한, 인터넷에서
-호스팅되는 지속적인 통합 서비스입니다. GitHub와 통합되어 있기도 하고, PHP를 포함한 많은 프로그래밍 언어를 아주 잘
-지원하고 있습니다.
+프로젝트에도 현실성있게 적용할 수 있도록 멋진 결과물을 내놓고 있습니다. Travis CI는 인터넷에서 호스팅되는 지속적인 통합 서비스입니다.
+GitHub와 통합할 수 있으며 PHP를 비롯한 다양한 언어를 지원합니다.
+GitHub에는 [GitHub Actions][github_actions]와의 지속적인 통합 워크플로가 있습니다.
 
 #### 더 읽어볼 만한 것들:
 
@@ -92,8 +90,8 @@ PHP 프로젝트에서 지속적인 통합 기법을 사용하는 방법에는 �
 [phpdeploy_deployer]: https://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
 [chef_vagrant_and_ec2]: https://web.archive.org/web/20190307220000/http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
-[Chef_cookbook]: https://github.com/chef-cookbooks/php
-[Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ
+[Chef_cookbook]: https://github.com/sous-chefs/php
+[Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyNYcpntVe6js-prb80LBZuc
 [apache_ant_tutorial]: https://code.tutsplus.com/tutorials/automate-your-projects-with-apache-ant--net-18595
 [Travis CI]: https://www.travis-ci.com/
 [Jenkins]: https://jenkins.io/
@@ -101,7 +99,6 @@ PHP 프로젝트에서 지속적인 통합 기법을 사용하는 방법에는 �
 [PHP Censor]: https://github.com/php-censor/php-censor
 [Teamcity]: https://www.jetbrains.com/teamcity/
 [Deployer]: https://deployer.org/
-[Rocketeer]: http://rocketeer.autopergamene.eu/
 [Magallanes]: https://www.magephp.com/
 [deploying_php_applications]: https://deployingphpapplications.com/
 [Ansible]: https://www.ansible.com/
@@ -109,3 +106,4 @@ PHP 프로젝트에서 지속적인 통합 기법을 사용하는 방법에는 �
 [ansible_for_devops]: https://leanpub.com/ansible-for-devops
 [ansible_for_aws]: https://leanpub.com/ansible-for-aws
 [an_ansible_tutorial]: https://serversforhackers.com/an-ansible-tutorial
+[github_actions]: https://docs.github.com/en/actions
